@@ -5,3 +5,4 @@ test:
 	@$(NODE) spec/node.js
 	
 .PHONY: test
+

@@ -50,3 +50,4 @@ p((new Date('May 25, 1987')).format('took place on %A the %nd'))
 SiteGenerator = function(){}
 p('site_generator'.camelcase.variable)
 // => [Function]
+
