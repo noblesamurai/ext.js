@@ -108,6 +108,11 @@ To use simply:
 ## Running Tests
 
     $ make test
+    
+## Contributors
+
+  * TJ Holowaychuk (visionmedia)
+  * Tobias Svensson (tobiassvn)
 
 ## License
 
