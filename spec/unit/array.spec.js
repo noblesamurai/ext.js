@@ -15,6 +15,15 @@ describe 'Array'
       [1,2,3,4,5].includes([1,2,3,4,5]).should.be_true
       [1,2,3,4,5].includes([1,2,3,4,5,6]).should.be_false
     end
+    
+    it 'should work with multiple arguments'
+      ['foo', 'bar'].includes('foo', 'bar').should.be_true
+      ['foo', 'bar'].includes('bar', 'foo').should.be_true
+      ['foo', 'bar'].includes('bar', 'nope').should.be_false
+      ['foo', 'bar'].includes('nope', 'foo').should.be_false
+      ['foo', 'bar'].includes('foo', 'nope').should.be_false
+      ['foo', 'bar'].includes('nope', 'bar').should.be_false
+    end
   end
 
   describe '#first'
