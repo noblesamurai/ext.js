@@ -20,6 +20,11 @@ To use simply:
 ### Array
 
   * Array#each
+  * Array#flat
+  * Array#includes(items)
+  * Array#first
+  * Array#last
+  * Array#compact([keepNull])
 
 ### Number
 
@@ -39,6 +44,8 @@ To use simply:
   * Number#toMonths
   * Number#toYears
   * Number#ago
+  * Number#times(fn[, scope])
+  * Number#isFloat
 
 ### String
 
@@ -74,6 +81,10 @@ To use simply:
   * Date#shortDayName
   * Date#format(str)
   * Date#inWordsSince(date)
+
+### RegExp
+
+  * RegExp.escape(str)
 
 ### Base64
 
