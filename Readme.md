@@ -24,6 +24,7 @@ To use simply:
   * Array#compact([removableValues])
   * Array#at(index)
   * Array#reduce()
+  * Array#select()
 
 ### Number
 

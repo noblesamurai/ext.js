@@ -95,4 +95,11 @@ describe 'Array'
       evens.should.eql [2,4,6,8,10]
     end
   end
+  
+  describe '#select()'
+    it 'should collect values when truthy'
+      var evens = 1..10.select(function(n){ return n % 2 === 0 })
+      evens.should.eql [2,4,6,8,10]
+    end
+  end
 end
