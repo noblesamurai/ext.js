@@ -51,16 +51,26 @@ describe 'Array'
   end
 
   describe '#compact()'
-    it 'should remove null elements from an array'
-      [null,1,2,3,4].compact().should.eql [1,2,3,4]
+    describe 'given no arguments'
+      it 'should remove null values'
+        [null,1,2,null,3].compact().should.eql [1,2,3]
+      end
+      
+      it 'should remove undefined values'
+        [null,1,2,null,,3].compact().should.eql [1,2,3]
+      end
+      
+      it 'should leave falsey values'
+        [false, -1, 0].compact().should.eql [false, -1, 0]
+      end
     end
-
-    it 'should remove undefined elements from an array'
-      [undefined,1,2,3,4].compact().should.eql [1,2,3,4]
-    end
-
-    it 'should keep null elements if true is passed as its argument'
-      [null,undefined,1,2,3,4].compact(true).should.eql [null,1,2,3,4]
+    
+    describe 'given arguments'
+      it 'should remove only values passed'
+        [null, 1,2,3].compact(1,2).should.eql [null, 3]
+        [false, -1, null, 0, undefined].compact(false, null).should.eql [-1, 0, undefined]
+        ['0', 0, -1, false].compact(false, 0).should.eql ['0', -1]
+      end
     end
   end
 
