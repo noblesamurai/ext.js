@@ -94,6 +94,10 @@ describe 'Array'
       })
       evens.should.eql [2,4,6,8,10]
     end
+    
+    it 'should work with shorthand function syntax'
+      1..5.reduce(0, '+').should.eql 15
+    end
   end
   
   describe '#select()'
