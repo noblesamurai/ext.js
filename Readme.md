@@ -63,6 +63,7 @@ To use simply:
   * Date#dayName
   * Date#shortDayName
   * Date#format(str)
+  * Date#inWordsSince(date)
   
 ### Base64
   

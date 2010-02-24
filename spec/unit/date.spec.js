@@ -131,4 +131,84 @@ describe 'Date'
       end
     end
   end
+  
+  describe '#inWordsSince()'
+    describe 'when seconds ago'
+      it 'should return "less than one minute"'
+        (5).seconds.ago.inWordsSince(new Date).should.eql 'less than one minute'
+      end
+    end
+    
+    describe 'when 60 seconds ago'
+      it 'should return "one minute"'
+        (1).minute.ago.inWordsSince(new Date).should.eql 'one minute'
+      end
+    end
+    
+    describe 'when minutes ago'
+      it 'should return "n minutes"'
+        (3).minutes.ago.inWordsSince(new Date).should.eql '3 minutes'
+      end
+    end
+    
+    describe 'when one hour ago'
+      it 'should return "one hour"'
+        (1).hour.ago.inWordsSince(new Date).should.eql 'one hour'
+      end
+    end
+    
+    describe 'when hours ago'
+      it 'should return "n hours"'
+        (12).hours.ago.inWordsSince(new Date).should.eql '12 hours'
+      end
+    end
+    
+    describe 'when one day ago'
+      it 'should return "one day"'
+        (1).day.ago.inWordsSince(new Date).should.eql 'one day'
+      end
+    end
+    
+    describe 'when days ago'
+      it 'should return "n days"'
+        (6).days.ago.inWordsSince(new Date).should.eql '6 days'
+      end
+    end
+    
+    describe 'when one week ago'
+      it 'should return "one week"'
+        (1).week.ago.inWordsSince(new Date).should.eql 'one week'
+      end
+    end
+    
+    describe 'when weeks ago'
+      it 'should return "n weeks"'
+        (3).weeks.ago.inWordsSince(new Date).should.eql '3 weeks'
+      end
+    end
+    
+    describe 'when one month ago'
+      it 'should return "one month"'
+        (1).month.ago.inWordsSince(new Date).should.eql 'one month'
+      end
+    end
+    
+    describe 'when months ago'
+      it 'should return "n months"'
+        (4).months.ago.inWordsSince(new Date).should.eql '4 months'
+      end
+    end
+    
+    describe 'when one year ago'
+      it 'should return "one year"'
+        (1).year.ago.inWordsSince(new Date).should.eql 'one year'
+      end
+    end
+    
+    describe 'when years ago'
+      it 'should return "n years"'
+        (6).years.ago.inWordsSince(new Date).should.eql '6 years'
+      end
+    end
+  end
 end
