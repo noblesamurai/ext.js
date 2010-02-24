@@ -22,5 +22,24 @@ describe 'Object'
       obj.fooWithFeature.should.equal source.foo
     end
   end
+
+  describe '#aliasMethodChain()'
+    it 'should extend the method with the given feature'
+      obj = { foo: function () {}, fooWithFeature: function () { return 'feature' } }
+      foo = obj.foo
+      obj.aliasMethodChain('foo', 'feature')
+      obj.fooWithoutFeature.should.eql foo
+      obj.foo.should.equal obj.fooWithFeature
+    end
+
+    it 'should be possible to specify an additional object to pull the features from'
+      obj            = { foo: function () {} }
+      foo            = obj.foo
+      objWithFeature = { fooWithFeature: function () {return 'feature'} }
+
+      obj.aliasMethodChain('foo', 'feature', objWithFeature)
+      obj.fooWithoutFeature.should.eql foo
+    end
+  end
 end
 
