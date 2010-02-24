@@ -14,6 +14,7 @@ else
     .exec('spec/unit/date.spec.js')
     .exec('spec/unit/printf.spec.js')
     .exec('spec/unit/md5.spec.js')
+    .exec('spec/unit/array.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
 
