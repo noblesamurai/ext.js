@@ -7,9 +7,6 @@ var number = require('ext/number')
 p((5).hours)
 // => 180000
 
-p(number.ordinalize(4))
-// => '4th'
-
 p((2).ordinalize)
 // => '2nd'
 
@@ -24,9 +21,6 @@ p('foo bar'.base64Encode)
 
 p('Zm9vIGJhcg=='.base64Decode)
 // => 'foo bar'
-
-p(number.currency(1000))
-// => '1,000'
 
 p((10000000.99).currency)
 // => '10,000,000.99'
@@ -50,3 +44,4 @@ p((new Date('May 25, 1987')).format('took place on %A the %nd'))
 SiteGenerator = function(){}
 p('site_generator'.camelcase.variable)
 // => [Function]
+
