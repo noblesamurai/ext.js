@@ -39,4 +39,12 @@ describe 'Number'
       seconds.should.eql 180
     end
   end
+
+  describe '#times()'
+    it 'should invoke the given method n times'
+      var i = 0;
+      (5).times(function () { i++ })
+      i.should.eql 5
+    end
+  end
 end
