@@ -13,8 +13,8 @@ To use simply:
 
 ### Number
 
-  * Number#ordinalize / ordinalize(n)
-  * Number#currency   / currency(n)
+  * Number#ordinalize
+  * Number#currency
   * Number#second     / Number#seconds
   * Number#minute     / Number#minutes
   * Number#hour       / Number#hours
@@ -44,7 +44,7 @@ To use simply:
   * String#remove(pattern)
   * String#startsWith(str)
   * String#endsWith(str)
-  * String#capitalize([all]) / capitalize(str[, all])
+  * String#capitalize([all])
   * String#wrap(prefix[, suffix])
 
 ### Date
