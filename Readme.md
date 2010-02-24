@@ -81,6 +81,7 @@ To use simply:
   * Date#shortDayName
   * Date#format(str)
   * Date#inWordsSince(date)
+  * Date#inWordsSinceNow
 
 ### RegExp
 
