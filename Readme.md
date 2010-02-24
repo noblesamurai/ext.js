@@ -4,7 +4,7 @@
 High quality JavaScript extensions for various tasks such as
 formatting dates, currency helpers, and more. This library targets
 server-side frameworks such as [Express](http://github.com/visionmedia/express) and
-uses the CommonJS module pattern when needed. Additionally, __all__ of the native
+uses the CommonJS module pattern when needed. Additionally, **all** of the native
 object extensions are non-enumerable.
 
 ## Extensions
