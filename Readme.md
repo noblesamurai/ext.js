@@ -12,11 +12,6 @@ object extensions are non-enumerable.
 To use simply:
     require('ext')
 
-### Object
-
-  * Object#alias(target, method[, source])
-  * Object#aliasMethodChain(target, feature)
-
 ### Array
 
   * Array#each
