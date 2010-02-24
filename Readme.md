@@ -18,10 +18,11 @@ To use simply:
 
   * Array#each
   * Array#flat
-  * Array#includes(items)
+  * Array#includes(item, [item ...])
   * Array#first
   * Array#last
-  * Array#compact([keepNull])
+  * Array#compact([removableValues])
+  * Array#at(index)
 
 ### Number
 
