@@ -23,6 +23,7 @@ To use simply:
   * Array#last
   * Array#compact([removableValues])
   * Array#at(index)
+  * Array#reduce()
 
 ### Number
 
@@ -42,7 +43,7 @@ To use simply:
   * Number#toMonths
   * Number#toYears
   * Number#ago
-  * Number#times(fn[, scope])
+  * Number#times(fn[, context])
   * Number#isFloat
 
 ### String

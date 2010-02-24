@@ -55,7 +55,7 @@ describe 'Array'
       [1,2,3].at(0).should.eql 1
     end
   end
-
+  
   describe '#compact()'
     describe 'given no arguments'
       it 'should remove null values'
@@ -83,6 +83,16 @@ describe 'Array'
   describe '#flatten'
     it 'should flatten the array'
       [1,[2,[3]]].flatten.should.eql [1,2,3]
+    end
+  end
+  
+  describe '#reduce()'
+    it 'should iterate with memo object'
+      var evens = 1..10.reduce([], function(evens, n){
+        if (n % 2 === 0) evens.push(n)
+        return evens
+      })
+      evens.should.eql [2,4,6,8,10]
     end
   end
 end
