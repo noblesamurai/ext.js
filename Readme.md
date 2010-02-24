@@ -88,7 +88,7 @@ To use simply:
 
 ### RegExp
 
-  * RegExp.escape(str)
+  * RegExp.escape(str[, chars])
 
 ### Base64
 
