@@ -5,7 +5,7 @@ require('jspec')
 require('ext')
 
 if (process.ARGV[2])
-  JSpec.exec('spec/unit/' + process.ARGV[2] + '.spec.js')  
+  JSpec.exec('spec/unit/' + process.ARGV[2] + '.spec.js')
 else
   JSpec
     .exec('spec/unit/base64.spec.js')
@@ -14,5 +14,9 @@ else
     .exec('spec/unit/date.spec.js')
     .exec('spec/unit/printf.spec.js')
     .exec('spec/unit/md5.spec.js')
+    .exec('spec/unit/array.spec.js')
+    .exec('spec/unit/object.spec.js')
+    .exec('spec/unit/regexp.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
+

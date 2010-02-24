@@ -1,20 +1,35 @@
 
 # ext.js - JavaScript Extensions &amp; Utilities
 
-High quality JavaScript extensions for various tasks such as 
+High quality JavaScript extensions for various tasks such as
 formatting dates, currency helpers, and more. This library targets
 server-side frameworks such as [Express](http://github.com/visionmedia/express) and
-uses the CommonJS module pattern when needed.
+uses the CommonJS module pattern when needed. Additionally, __all__ of the native
+object extensions are non-enumerable.
 
 ## Extensions
 
 To use simply:
     require('ext')
 
+### Object
+
+  * Object#alias(target, method[, source])
+  * Object#aliasMethodChain(target, feature)
+
+### Array
+
+  * Array#each
+  * Array#flat
+  * Array#includes(items)
+  * Array#first
+  * Array#last
+  * Array#compact([keepNull])
+
 ### Number
-  
-  * Number#ordinalize / ordinalize(n)
-  * Number#currency   / currency(n)
+
+  * Number#ordinalize
+  * Number#currency
   * Number#second     / Number#seconds
   * Number#minute     / Number#minutes
   * Number#hour       / Number#hours
@@ -29,6 +44,8 @@ To use simply:
   * Number#toMonths
   * Number#toYears
   * Number#ago
+  * Number#times(fn[, scope])
+  * Number#isFloat
 
 ### String
 
@@ -45,9 +62,9 @@ To use simply:
   * String#remove(pattern)
   * String#startsWith(str)
   * String#endsWith(str)
-  * String#capitalize([all]) / capitalize(str[, all])
+  * String#capitalize([all])
   * String#wrap(prefix[, suffix])
-  
+
 ### Date
 
   * Date#year
@@ -64,18 +81,22 @@ To use simply:
   * Date#shortDayName
   * Date#format(str)
   * Date#inWordsSince(date)
-  
+
+### RegExp
+
+  * RegExp.escape(str)
+
 ### Base64
-  
+
   * String#base64Encode / encode(str)
   * String#base64Decode / decode(str)
-  
+
 ## MD5
 
   * String#md5 / hash(str)
-  
+
 ### printf
-  
+
   * sprintf(str[, arg[, ...]])
   * eprintf(str[, arg[, ...]])
   * printf(str[, arg[, ...]])
@@ -84,7 +105,7 @@ To use simply:
 
     $ make test
 
-## License 
+## License
 
 (The MIT License)
 
@@ -108,3 +129,4 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
