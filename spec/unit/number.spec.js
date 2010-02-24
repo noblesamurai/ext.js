@@ -47,4 +47,12 @@ describe 'Number'
       i.should.eql 5
     end
   end
+
+  describe '#isFloat'
+    it 'should indicate whether the number is a float'
+      (1.5).isFloat.should.be_true
+      (3.14159265).isFloat.should.be_true
+      (42).isFloat.should.be_false
+    end
+  end
 end
