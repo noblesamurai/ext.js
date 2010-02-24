@@ -27,6 +27,7 @@ To use simply:
   * Array#take(n)
   * Array#reduce()
   * Array#select()
+  * Array#grep(pattern)
 
 ### Number
 

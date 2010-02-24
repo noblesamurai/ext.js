@@ -98,6 +98,16 @@ describe 'Array'
     end
   end
   
+  describe '#grep()'
+    it 'should select strings matching'
+      ['foo', 'foobar', 'bar'].grep(/^foo(bar)?/).should.eql ['foo', 'foobar']
+    end
+    
+    it 'should ignore other objects'
+      [1, 'foo'].grep(/foo/).should.eql ['foo']
+    end
+  end
+  
   describe '#reduce()'
     it 'should iterate with memo object'
       var evens = 1..10.reduce([], function(evens, n){
