@@ -86,6 +86,18 @@ describe 'Array'
     end
   end
   
+  describe '#drop()'
+    it 'should drop the first n values'
+      1..10.drop(5).should.eql 6..10
+    end
+  end
+  
+  describe '#take()'
+    it 'should take the first n values'
+      1..10.take(5).should.eql 1..5
+    end
+  end
+  
   describe '#reduce()'
     it 'should iterate with memo object'
       var evens = 1..10.reduce([], function(evens, n){

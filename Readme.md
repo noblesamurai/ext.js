@@ -23,6 +23,8 @@ To use simply:
   * Array#last
   * Array#compact([removableValues])
   * Array#at(index)
+  * Array#drop(n)
+  * Array#take(n)
   * Array#reduce()
   * Array#select()
 
