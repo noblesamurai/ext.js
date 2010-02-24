@@ -16,6 +16,7 @@ else
     .exec('spec/unit/md5.spec.js')
     .exec('spec/unit/array.spec.js')
     .exec('spec/unit/object.spec.js')
+    .exec('spec/unit/regexp.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
 
