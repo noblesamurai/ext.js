@@ -2,10 +2,12 @@
 # ext.js - JavaScript Extensions &amp; Utilities
 
 High quality JavaScript extensions for various tasks such as
-formatting dates, currency helpers, and more. This library targets
-server-side frameworks such as [Express](http://github.com/visionmedia/express) and
-uses the CommonJS module pattern when needed. Additionally, **all** of the native
-object extensions are non-enumerable.
+formatting dates, currency helpers, and more. This library targets node.js and
+server-side frameworks such as [Express](http://github.com/visionmedia/express).
+
+Ext.js uses the CommonJS module pattern when needed.
+Additionally, **all** of the native object extensions are non-enumerable,
+and you may create your own via Ext.extend(prototype, methods).
 
 ## Extensions
 
