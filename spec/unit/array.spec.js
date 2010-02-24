@@ -54,4 +54,10 @@ describe 'Array'
       [null,undefined,1,2,3,4].compact(true).should.eql [null,1,2,3,4]
     end
   end
+
+  describe '#flat'
+    it 'should flatten the array'
+      [1,[2,[3]]].flat.should.eql [1,2,3]
+    end
+  end
 end
