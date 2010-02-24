@@ -46,6 +46,12 @@ describe 'Number'
       (5).times(function () { i++ })
       i.should.eql 5
     end
+    
+    it 'should evaluate in context to the given object'
+      var context
+      (1).times(function(){ context = this }, { foo: 'bar' })
+      context.should.eql { foo: 'bar' }
+    end
   end
 
   describe '#isFloat'
