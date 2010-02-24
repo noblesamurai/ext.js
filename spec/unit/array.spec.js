@@ -32,7 +32,7 @@ describe 'Array'
     end
 
     it 'should be possible to assign the value'
-      a = [1,2,3]
+      var a = [1,2,3]
       a.first = 4
       a[0].should.eql 4
     end
@@ -44,9 +44,15 @@ describe 'Array'
     end
 
     it 'should be possible to assign the value'
-      a = [1,2,3]
+      var a = [1,2,3]
       a.last = 4
       a[2].should.eql 4
+    end
+  end
+  
+  describe '#at()'
+    it 'should return the value at the given index'
+      [1,2,3].at(0).should.eql 1
     end
   end
 
