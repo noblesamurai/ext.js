@@ -11,7 +11,7 @@ describe 'Number'
         number.currency(1000000).should.eql '1,000,000'
       end
     end
-    
+
     describe 'given a float'
       it 'should return a currency formatted string as a float'
         number.currency(1.12).should.eql '1.12'

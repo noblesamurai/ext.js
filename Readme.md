@@ -1,7 +1,7 @@
 
 # ext.js - JavaScript Extensions &amp; Utilities
 
-High quality JavaScript extensions for various tasks such as 
+High quality JavaScript extensions for various tasks such as
 formatting dates, currency helpers, and more. This library targets
 server-side frameworks such as [Express](http://github.com/visionmedia/express) and
 uses the CommonJS module pattern when needed.
@@ -12,7 +12,7 @@ To use simply:
     require('ext')
 
 ### Number
-  
+
   * Number#ordinalize / ordinalize(n)
   * Number#currency   / currency(n)
   * Number#second     / Number#seconds
@@ -46,7 +46,7 @@ To use simply:
   * String#endsWith(str)
   * String#capitalize([all]) / capitalize(str[, all])
   * String#wrap(prefix[, suffix])
-  
+
 ### Date
 
   * Date#year
@@ -62,18 +62,18 @@ To use simply:
   * Date#dayName
   * Date#shortDayName
   * Date#format(str)
-  
+
 ### Base64
-  
+
   * String#base64Encode / encode(str)
   * String#base64Decode / decode(str)
-  
+
 ## MD5
 
   * String#md5 / hash(str)
-  
+
 ### printf
-  
+
   * sprintf(str[, arg[, ...]])
   * eprintf(str[, arg[, ...]])
   * printf(str[, arg[, ...]])
@@ -82,7 +82,7 @@ To use simply:
 
     $ make test
 
-## License 
+## License
 
 (The MIT License)
 

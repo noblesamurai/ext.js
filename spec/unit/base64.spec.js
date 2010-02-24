@@ -8,7 +8,7 @@ describe 'base64'
       'foo'.base64Encode.should.eql 'Zm9v'
     end
   end
-  
+
   describe '.decode()'
     it 'should decode base64 encoded strings'
       base64.decode('Zm9v').should.eql 'foo'
