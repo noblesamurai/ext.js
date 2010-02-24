@@ -142,4 +142,12 @@ describe 'Array'
       ['foo', 'bar'].map('length').should.eql [3,3]
     end
   end
+  
+  describe '#sample'
+    it 'should return a random value'
+      1..5.sample.should.be_a Number
+      1..5.sample.should.be_a Number
+      1..5.sample.should.be_a Number
+    end
+  end
 end
