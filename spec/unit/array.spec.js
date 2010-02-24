@@ -64,9 +64,9 @@ describe 'Array'
     end
   end
 
-  describe '#flat'
+  describe '#flatten'
     it 'should flatten the array'
-      [1,[2,[3]]].flat.should.eql [1,2,3]
+      [1,[2,[3]]].flatten.should.eql [1,2,3]
     end
   end
 end
