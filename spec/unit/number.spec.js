@@ -32,5 +32,11 @@ describe 'Number'
       end
     end
   end
-end
 
+  describe '#ago'
+    it 'should return a previous Date in time'
+      var seconds = (Number(new Date) - Number((3).minutes.ago)) / 1000
+      seconds.should.eql 180
+    end
+  end
+end

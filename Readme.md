@@ -28,6 +28,7 @@ To use simply:
   * Number#toWeeks
   * Number#toMonths
   * Number#toYears
+  * Number#ago
 
 ### String
 
@@ -62,6 +63,7 @@ To use simply:
   * Date#dayName
   * Date#shortDayName
   * Date#format(str)
+  * Date#inWordsSince(date)
 
 ### Base64
 
