@@ -210,5 +210,9 @@ describe 'Date'
         (6).years.ago.inWordsSince(new Date).should.eql '6 years'
       end
     end
+    
+    it 'should work with fractional dates'
+      (6.342).years.ago.inWordsSince(new Date).should.eql '6 years'
+    end
   end
 end
