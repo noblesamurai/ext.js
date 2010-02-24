@@ -40,4 +40,18 @@ describe 'Array'
       a[2].should.eql 4
     end
   end
+
+  describe '#compact()'
+    it 'should remove null elements from an array'
+      [null,1,2,3,4].compact().should.eql [1,2,3,4]
+    end
+
+    it 'should remove undefined elements from an array'
+      [undefined,1,2,3,4].compact().should.eql [1,2,3,4]
+    end
+
+    it 'should keep null elements if true is passed as its argument'
+      [null,undefined,1,2,3,4].compact(true).should.eql [null,1,2,3,4]
+    end
+  end
 end
