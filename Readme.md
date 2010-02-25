@@ -21,6 +21,7 @@ To use simply:
   * Array#includes(item, [item ...])
   * Array#first
   * Array#last
+  * Array#sum
   * Array#sample
   * Array#compact([removableValues])
   * Array#at(index)
