@@ -87,6 +87,7 @@ To use simply:
   * String#plural
   * String#includes(str)
   * String#gsub(pattern, replacement[, scope])
+  * String#count(str)
 
 ### Date
 
