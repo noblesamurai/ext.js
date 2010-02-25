@@ -44,6 +44,7 @@ To use simply:
   * Array#grep(pattern)
   * Array#detect(fn[, scope])
   * Array#remove(obj[, fn[, scope]])
+  * Array#isEmpty
 
 ### Number
 

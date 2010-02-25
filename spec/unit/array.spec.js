@@ -57,6 +57,13 @@ describe 'Array'
     end
   end
 
+  describe '#isEmpty'
+    it 'should indicate whether the array is empty'
+      [].isEmpty.should.be_true
+      [1].isEmpty.should.be_false
+    end
+  end
+
   describe '#clear'
     it 'should delete all elements in the array'
       var a = [1,2,3]
