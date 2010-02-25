@@ -159,4 +159,24 @@ describe 'Array'
       1..5.avg.should.eql 3
     end
   end
+  
+  describe '#min'
+    it 'should return the smallest value'
+      [3,2,34,4,2].min.should.eql 2
+    end
+    
+    it 'should return 0 when empty'
+      [].min.should.be_null
+    end
+  end
+  
+  describe '#max'
+    it 'should return the largest value'
+      [2,3,2,3,4,44].max.should.eql 44
+    end
+    
+    it 'should return null when empty'
+      [].max.should.be_null
+    end
+  end
 end

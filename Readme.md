@@ -23,6 +23,8 @@ To use simply:
   * Array#last
   * Array#sum
   * Array#avg
+  * Array#min
+  * Array#max
   * Array#sample
   * Array#compact([removableValues])
   * Array#at(index)
