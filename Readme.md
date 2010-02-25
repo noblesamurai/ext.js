@@ -41,6 +41,7 @@ To use simply:
   * Array#any()
   * Array#none()
   * Array#grep(pattern)
+  * Array#detect(fn[, scope])
 
 ### Number
 
@@ -82,6 +83,10 @@ To use simply:
   * String#endsWith(str)
   * String#capitalize([all])
   * String#wrap(prefix[, suffix])
+  * String#singular
+  * String#plural
+  * String#includes(str)
+  * String#gsub(pattern, replacement[, scope])
 
 ### Date
 
