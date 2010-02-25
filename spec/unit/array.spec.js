@@ -10,24 +10,6 @@ describe 'Array'
       it 'should access the property on the first argument'
         ['foo', 'bar'].map('length').should.eql [3,3]
       end
-
-      it 'should still allow the traditional syntax and pass the expected arguments to the block'
-        var args
-        [1,2,3].map(function() { args = arguments })
-        args[0].should.eql 3
-        args[1].should.eql 2
-        args[2].should.eql [1,2,3]
-      end
-
-      it 'should allow scoping `this` for passed function blocks'
-        var obj = {
-          incr: 2,
-          run: function () {
-            return [1,2,3].map(function (val) { return val + this.incr }, this)
-          }
-        }
-        obj.run().should.eql [3,4,5]
-      end
     end
 
     describe 'when given a method name'
@@ -198,7 +180,12 @@ describe 'Array'
       })
       evens.should.eql [2,4,6,8,10]
     end
-
+    
+    it 'should allow optional context'
+      var obj = { foo: 'bar' }
+      1..3.reduce([], function(){ return this.foo }, obj).should.eql 'bar'
+    end
+    
     it 'should work with shorthand function syntax'
       1..5.reduce(0, 'a + b').should.eql 15
     end
@@ -218,6 +205,11 @@ describe 'Array'
   describe '#map()'
     it 'should return values returned by the given callback'
       1..3.map(function(n){ return ++n }).should.eql [2,3,4]
+    end
+    
+    it 'should allow optional context'
+      var obj = { foo: 'bar' }
+      1..3.map(function(){ return this.foo }, obj).should.eql ['bar', 'bar', 'bar']
     end
 
     it 'should work with shorthand function syntax'
