@@ -10,6 +10,24 @@ describe 'Array'
       it 'should access the property on the first argument'
         ['foo', 'bar'].map('length').should.eql [3,3]
       end
+
+      it 'should still allow the traditional syntax and pass the expected arguments to the block'
+        var args
+        [1,2,3].map(function() { args = arguments })
+        args[0].should.eql 3
+        args[1].should.eql 2
+        args[2].should.eql [1,2,3]
+      end
+
+      it 'should allow scoping `this` for passed function blocks'
+        var obj = {
+          incr: 2,
+          run: function () {
+            return [1,2,3].map(function (val) { return val + this.incr }, this)
+          }
+        }
+        obj.run().should.eql [3,4,5]
+      end
     end
 
     describe 'when given a method name'
