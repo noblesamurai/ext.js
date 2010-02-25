@@ -66,7 +66,7 @@ describe 'Array'
       [1,2,3,4].detect(function () {}).should.be_undefined
     end
   end
-
+  
   describe '#each()'
     it 'should be an alias of #forEach()'
       Array.prototype.each.should.equal Array.prototype.forEach
@@ -199,6 +199,17 @@ describe 'Array'
 
     it 'should work with shorthand function syntax'
       1..10.select('a % 2 === 0').should.eql [2,4,6,8,10]
+    end
+  end
+  
+  describe '#reject()'
+    it 'should reject values when truthy'
+      var odds = 1..10.reject(function(n){ return n % 2 === 0 })
+      odds.should.eql [1,3,5,7,9]
+    end
+
+    it 'should work with shorthand function syntax'
+      1..10.reject('a % 2 === 0').should.eql [1,3,5,7,9]
     end
   end
 
