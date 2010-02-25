@@ -1,36 +1,5 @@
 
 describe 'String'
-  describe '#gsub()'
-    it 'should replace string patterns with a string replacement'
-      "abbba".gsub('b', 'c').should.eql "accca"
-    end
-
-    it 'should replace regexp patterns with a string replacement'
-      "acCca".gsub(/c/i, 'b').should.eql "abbba"
-    end
-
-    it 'should take numbers as a replacement'
-      "accca".gsub('c', 1).should.eql "a111a"
-    end
-
-    it 'should take function blocks as an argument'
-      "acCca".gsub(/c/i, function (match) { return 'k' }).should.eql "akkka"
-    end
-
-    it 'should pass the index to the function'
-      "acCca".gsub(/c/i, function (match, index) { return index }).should.eql "a123a"
-    end
-
-    it 'should pass the input to the function'
-      "aa".gsub(/a/i, function (match, index, input) { return input }).should.eql "aaaa"
-    end
-
-    it 'should be possible to pass an additional scope'
-      this.test = function () { return 'f' }
-      "aa".gsub(/a/i, function (match) { return this.test() }, this).should.eql "ff"
-    end
-  end
-
   describe '#includes()'
     it 'should indicate whether a string contains another string'
       "this.is.a.test".includes('is.').should.be_true
