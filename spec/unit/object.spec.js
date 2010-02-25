@@ -17,7 +17,7 @@ describe 'Object'
 
   describe '#values'
     it 'should return an array containing all the values of an object'
-      { a: 1, b: 2, c: 3 }.values.should.eql [1,2,3]
+      { foo: 'bar', baz: 'raz' }.values.should.eql ['bar', 'raz']
     end
   end
 
