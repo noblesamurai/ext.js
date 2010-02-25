@@ -214,6 +214,12 @@ describe 'Array'
       var evens = 1..10.select(function(n){ return n % 2 === 0 })
       evens.should.eql [2,4,6,8,10]
     end
+    
+    it 'should allow optional context'
+      var obj = { foo: function(){}}
+      obj.should.receive('foo', 'twice')
+      ;[1,2].select(function(){ return this.foo() }, obj)
+    end
 
     it 'should work with shorthand function syntax'
       1..10.select('a % 2 === 0').should.eql [2,4,6,8,10]
