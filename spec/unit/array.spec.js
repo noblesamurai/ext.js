@@ -43,6 +43,20 @@ describe 'Array'
     end
   end
 
+  describe '#remove()'
+    it 'should remove elements from the array equal to the given object'
+      [1,2,2,2,2,3].remove(2).should.eql [1,3]
+    end
+
+    it 'should return undefined if no match has been found'
+      [1,2,3].remove(4).should.be_undefined
+    end
+
+    it 'should be possible to pass a function be invoked if no element has been found'
+      [1,2,3].remove(4, function () { return 42 }).should.eql 42
+    end
+  end
+
   describe '#clear'
     it 'should delete all elements in the array'
       var a = [1,2,3]
