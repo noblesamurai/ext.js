@@ -147,6 +147,10 @@ describe 'Array'
     it 'should return false when none evaluate to true'
       1..5.any(function(n){ return n > 5 }).should.be_false
     end
+    
+    it 'should work with shorthand function syntax'
+      1..5.any('a == 4').should.be_true
+    end
   end
   
   describe '#none()'
@@ -156,6 +160,10 @@ describe 'Array'
     
     it 'should return false when any evaluate to true'
       1..10.none(function(n){ return n > 5 }).should.be_false
+    end
+    
+    it 'should work with shorthand function syntax'
+      1..10.none('a > 5').should.be_false
     end
   end
   
