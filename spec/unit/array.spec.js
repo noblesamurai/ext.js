@@ -59,7 +59,11 @@ describe 'Array'
     end
 
     it 'should return undefined if the given function never returns true'
-      [1,2,3,4].detect(function () {}).should.be_undefined
+      [1,2,3,4].detect(function(){}).should.be_undefined
+    end
+    
+    it 'should allow shorthand function syntax'
+      [1,2,3,4].detect('=== 3').should.eql 3
     end
   end
   
