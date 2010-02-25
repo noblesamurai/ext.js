@@ -266,6 +266,12 @@ describe 'Array'
     it 'should return false when none evaluate to true'
       1..5.any(function(n){ return n > 5 }).should.be_false
     end
+    
+    it 'should allow optional context'
+      var obj = { foo: function(){}}
+      obj.should.receive('foo', 'twice')
+      ;[1,2].any(function(){ return this.foo() }, obj)
+    end
 
     it 'should work with shorthand function syntax'
       1..5.any('a == 4').should.be_true
@@ -279,6 +285,12 @@ describe 'Array'
 
     it 'should return false when any evaluate to true'
       1..10.none(function(n){ return n > 5 }).should.be_false
+    end
+    
+    it 'should allow optional context'
+      var obj = { foo: function(){}}
+      obj.should.receive('foo', 'twice')
+      ;[1,2].none(function(){ return this.foo() }, obj)
     end
 
     it 'should work with shorthand function syntax'
