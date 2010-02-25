@@ -12,6 +12,7 @@ else
     .exec('spec/unit/base64.spec.js')
     .exec('spec/unit/number.spec.js')
     .exec('spec/unit/string.spec.js')
+    .exec('spec/unit/string/inflections.spec.js')
     .exec('spec/unit/date.spec.js')
     .exec('spec/unit/printf.spec.js')
     .exec('spec/unit/md5.spec.js')
