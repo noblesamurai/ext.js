@@ -149,6 +149,16 @@ describe 'Array'
     end
   end
   
+  describe '#none()'
+    it 'should return true if none evaluate to true'
+      1..5.none(function(n){ return n > 5 }).should.be_true
+    end
+    
+    it 'should return false when any evaluate to true'
+      1..10.none(function(n){ return n > 5 }).should.be_false
+    end
+  end
+  
   describe '#sample'
     it 'should return a random value'
       1..5.sample.should.be_a Number

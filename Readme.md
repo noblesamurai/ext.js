@@ -39,6 +39,7 @@ To use simply:
   * Array#reduce()
   * Array#select()
   * Array#any()
+  * Array#none()
   * Array#grep(pattern)
 
 ### Number
