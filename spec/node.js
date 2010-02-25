@@ -8,6 +8,7 @@ if (process.ARGV[2])
   JSpec.exec('spec/unit/' + process.ARGV[2] + '.spec.js')
 else
   JSpec
+    .exec('spec/unit/object.spec.js')
     .exec('spec/unit/base64.spec.js')
     .exec('spec/unit/number.spec.js')
     .exec('spec/unit/string.spec.js')

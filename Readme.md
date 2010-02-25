@@ -13,6 +13,10 @@ and you may create your own via Ext.extend(prototype, methods).
 
 To use simply:
     require('ext')
+    
+### Object
+
+  * Object#clone
 
 ### Array
 
