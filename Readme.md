@@ -43,6 +43,7 @@ To use simply:
   * Array#none()
   * Array#grep(pattern)
   * Array#detect(fn[, scope])
+  * Array#remove(obj[, fn[, scope]])
 
 ### Number
 
