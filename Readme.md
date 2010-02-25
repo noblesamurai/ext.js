@@ -121,6 +121,7 @@ To use simply:
   * String#base64Decode / decode(str)
 
 ### Error
+
   * Error.raise([name[, message[, object]]])
 
 ## MD5
