@@ -23,6 +23,7 @@ To use simply:
 
   * Array#each
   * Array#flat
+  * Array#excludes(item, [item ...])
   * Array#includes(item, [item ...])
   * Array#first
   * Array#last
