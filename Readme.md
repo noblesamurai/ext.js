@@ -18,7 +18,6 @@ To use simply:
 
   * Object#clone
   * Object#keys
-  * Object#extract([i])
 
 ### Array
 
