@@ -17,6 +17,7 @@ To use simply:
 ### Object
 
   * Object#clone
+  * Object#keys
 
 ### Array
 
