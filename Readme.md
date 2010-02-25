@@ -21,11 +21,11 @@ To use simply:
 
 ### Array
 
+  * Array#each(fn)
+  * Array#excludes(item[, item, ...])
+  * Array#includes(item[, item, ...])
   * Array#clear
-  * Array#each
-  * Array#flat
-  * Array#excludes(item, [item ...])
-  * Array#includes(item, [item ...])
+  * Array#flatten
   * Array#first
   * Array#last
   * Array#sum
@@ -38,10 +38,10 @@ To use simply:
   * Array#drop(n)
   * Array#take(n)
   * Array#reduce(memo, fn[, context])
-  * Array#select(fn)
-  * Array#reject(fn)
-  * Array#any(fn)
-  * Array#none(fn)
+  * Array#select(fn[, context])
+  * Array#reject(fn[, context])
+  * Array#any(fn[, context])
+  * Array#none(fn[, context])
   * Array#grep(pattern)
   * Array#detect(fn[, context])
   * Array#remove(obj[, fn[, context]])
