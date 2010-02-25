@@ -165,7 +165,7 @@ describe 'Array'
       [3,2,34,4,2].min.should.eql 2
     end
     
-    it 'should return 0 when empty'
+    it 'should return null when empty'
       [].min.should.be_null
     end
   end
