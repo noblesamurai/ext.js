@@ -210,12 +210,12 @@ describe 'Date'
         (6).years.ago.inWordsSince(new Date).should.eql '6 years'
       end
     end
-    
+
     it 'should work with fractional dates'
       (6.342).years.ago.inWordsSince(new Date).should.eql '6 years'
     end
   end
-  
+
   describe '#inWordsSinceNow'
     it 'should work like inWordsSince() providing the current date'
       (6).years.ago.inWordsSinceNow.should.eql '6 years'

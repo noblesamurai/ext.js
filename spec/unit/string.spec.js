@@ -135,13 +135,13 @@ describe 'String'
       ' \n\n foo bar '.strip.should.eql 'foo bar'
     end
   end
-  
+
   describe '#drop()'
     it 'should remove n characters'
       'foobar'.drop(3).should.eql 'bar'
     end
   end
-  
+
   describe '#take()'
     it 'should return n characters'
       'foobar'.take(3).should.eql 'foo'

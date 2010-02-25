@@ -8,7 +8,7 @@ describe 'Object'
       b.should.have_property 'foo', 'bar'
     end
   end
-  
+
   describe '#keys'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']

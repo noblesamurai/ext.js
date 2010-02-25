@@ -13,7 +13,7 @@ and you may create your own via Ext.extend(prototype, methods).
 
 To use simply:
     require('ext')
-    
+
 ### Object
 
   * Object#clone
@@ -119,24 +119,24 @@ To use simply:
   * sprintf(str[, arg[, ...]])
   * eprintf(str[, arg[, ...]])
   * printf(str[, arg[, ...]])
-  
+
 ## Iterator Functions
 
 ### Literals
 
     [1,2,3,4,5].select(function(n){ return n > 3 })
     // => [4,5]
-   
+
 ### Properties
 
     ['hello', 'there'].map('length')
     // => [5,5]
-   
+
 ### Methods
 
     [1,2,3].map('toString()')
     // => ['1','2','3']
-   
+
 ### Binary Operators
 
     [1,2,3,4,5].select('> 3')
@@ -145,7 +145,7 @@ To use simply:
 ## Running Tests
 
     $ make test
-    
+
 ## Contributors
 
   * TJ Holowaychuk (visionmedia)
