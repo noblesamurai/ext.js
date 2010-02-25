@@ -1,5 +1,11 @@
 describe 'Array'
   describe 'shorthand function syntax'
+    describe 'when given binary operators'
+      it 'should evaluate against the first argument'
+        1..10.select('> 5').should.eql 6..10
+      end  
+    end
+    
     describe 'when given a property name is given'
       it 'should access the property on the first argument'
         ['foo', 'bar'].map('length').should.eql [3,3]
