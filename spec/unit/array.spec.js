@@ -156,9 +156,11 @@ describe 'Array'
       1..5.sum.should.eql 15
       [1.5, 3.3].sum.should.eql 4.8
     end
-    
-    it 'should ignore non-numeric objects'
-      [1,2, 'foo', false].sum.should.eql 3
+  end
+  
+  describe '#avg'
+    it 'should return the average of values in the array'
+      1..5.avg.should.eql 3
     end
   end
 end

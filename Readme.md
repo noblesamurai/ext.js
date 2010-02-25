@@ -22,6 +22,7 @@ To use simply:
   * Array#first
   * Array#last
   * Array#sum
+  * Array#avg
   * Array#sample
   * Array#compact([removableValues])
   * Array#at(index)
