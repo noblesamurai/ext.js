@@ -225,6 +225,12 @@ describe 'Array'
       var odds = 1..10.reject(function(n){ return n % 2 === 0 })
       odds.should.eql [1,3,5,7,9]
     end
+    
+    it 'should allow optional context'
+      var obj = { foo: function(){}}
+      obj.should.receive('foo', 'twice')
+      ;[1,2].reject(function(){ return this.foo() }, obj)
+    end
 
     it 'should work with shorthand function syntax'
       1..10.reject('a % 2 === 0').should.eql [1,3,5,7,9]
