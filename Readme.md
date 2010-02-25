@@ -116,6 +116,9 @@ To use simply:
   * String#base64Encode / encode(str)
   * String#base64Decode / decode(str)
 
+### Error
+  * Error.raise([name[, message[, object]]])
+
 ## MD5
 
   * String#md5 / hash(str)
