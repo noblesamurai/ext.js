@@ -139,6 +139,16 @@ describe 'Array'
     end
   end
   
+  describe '#any()'
+    it 'should return true if any evaluate to true'
+      [4,6,4,1,2].any(function(n){ return n > 5 }).should.be_true
+    end
+    
+    it 'should return false when none evaluate to true'
+      1..5.any(function(n){ return n > 5 }).should.be_false
+    end
+  end
+  
   describe '#sample'
     it 'should return a random value'
       1..5.sample.should.be_a Number

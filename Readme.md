@@ -38,6 +38,7 @@ To use simply:
   * Array#take(n)
   * Array#reduce()
   * Array#select()
+  * Array#any()
   * Array#grep(pattern)
 
 ### Number
