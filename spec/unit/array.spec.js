@@ -43,6 +43,17 @@ describe 'Array'
     end
   end
 
+  describe '#clear'
+    it 'should delete all elements in the array'
+      var a = [1,2,3]
+      a.clear
+      a[0].should.be_undefined
+      a[1].should.be_undefined
+      a[2].should.be_undefined
+      a.length.should.eql 0
+    end
+  end
+
   describe '#detect()'
     it 'should return the first element the given function returns true for'
       [1,2,3,4].detect(function (e) { return e === 3 }).should.eql 3

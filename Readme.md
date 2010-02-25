@@ -21,6 +21,7 @@ To use simply:
 
 ### Array
 
+  * Array#clear
   * Array#each
   * Array#flat
   * Array#excludes(item, [item ...])
