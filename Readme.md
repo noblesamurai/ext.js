@@ -13,7 +13,7 @@ and you may create your own via Ext.extend(prototype, methods).
 
 To use simply:
     require('ext')
-    
+
 ### Object
 
   * Object#clone
@@ -21,6 +21,7 @@ To use simply:
 
 ### Array
 
+  * Array#clear
   * Array#each
   * Array#flat
   * Array#excludes(item, [item ...])
@@ -36,11 +37,15 @@ To use simply:
   * Array#at(index)
   * Array#drop(n)
   * Array#take(n)
-  * Array#reduce()
-  * Array#select()
-  * Array#any()
-  * Array#none()
+  * Array#reduce(memo, fn[, context])
+  * Array#select(fn)
+  * Array#reject(fn)
+  * Array#any(fn)
+  * Array#none(fn)
   * Array#grep(pattern)
+  * Array#detect(fn[, context])
+  * Array#remove(obj[, fn[, context]])
+  * Array#isEmpty
 
 ### Number
 
@@ -82,6 +87,11 @@ To use simply:
   * String#endsWith(str)
   * String#capitalize([all])
   * String#wrap(prefix[, suffix])
+  * String#singular
+  * String#plural
+  * String#includes(str)
+  * String#gsub(pattern, replacement[, scope])
+  * String#count(str)
 
 ### Date
 
@@ -110,6 +120,10 @@ To use simply:
   * String#base64Encode / encode(str)
   * String#base64Decode / decode(str)
 
+### Error
+
+  * Error.raise([name[, message[, object]]])
+
 ## MD5
 
   * String#md5 / hash(str)
@@ -119,24 +133,24 @@ To use simply:
   * sprintf(str[, arg[, ...]])
   * eprintf(str[, arg[, ...]])
   * printf(str[, arg[, ...]])
-  
+
 ## Iterator Functions
 
 ### Literals
 
     [1,2,3,4,5].select(function(n){ return n > 3 })
     // => [4,5]
-   
+
 ### Properties
 
     ['hello', 'there'].map('length')
     // => [5,5]
-   
+
 ### Methods
 
     [1,2,3].map('toString()')
     // => ['1','2','3']
-   
+
 ### Binary Operators
 
     [1,2,3,4,5].select('> 3')
@@ -145,7 +159,7 @@ To use simply:
 ## Running Tests
 
     $ make test
-    
+
 ## Contributors
 
   * TJ Holowaychuk (visionmedia)

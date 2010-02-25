@@ -8,10 +8,17 @@ describe 'Object'
       b.should.have_property 'foo', 'bar'
     end
   end
-  
+
   describe '#keys'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']
     end
   end
+
+  describe '#values'
+    it 'should return an array containing all the values of an object'
+      { foo: 'bar', baz: 'raz' }.values.should.eql ['bar', 'raz']
+    end
+  end
 end
+
