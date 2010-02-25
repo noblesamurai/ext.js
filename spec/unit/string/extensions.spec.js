@@ -31,6 +31,13 @@ describe 'String'
     end
   end
 
+  describe '#includes()'
+    it 'should indicate whether a string contains another string'
+      "this.is.a.test".includes('is.').should.be_true
+      "another_one".includes('.').should.be_false
+    end
+  end
+
   describe '#wrap'
     describe 'with a single string'
       it 'should wrap using string as prefix and suffix'
