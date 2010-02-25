@@ -38,6 +38,14 @@ describe 'String'
     end
   end
 
+  describe '#count()'
+    it 'should count occurences of a string in another'
+      "this,is,a,test".count(',').should.eql 3
+      "this,is,another,test".count('another').should.eql 1
+      "this is a question???".count('?').should.eql 3
+    end
+  end
+
   describe '#wrap'
     describe 'with a single string'
       it 'should wrap using string as prefix and suffix'
