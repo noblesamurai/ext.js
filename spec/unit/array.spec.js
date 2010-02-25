@@ -43,6 +43,16 @@ describe 'Array'
     end
   end
 
+  describe '#detect()'
+    it 'should return the first element the given function returns true for'
+      [1,2,3,4].detect(function (e) { return e === 3 }).should.eql 3
+    end
+
+    it 'should return undefined if the given function never returns true'
+      [1,2,3,4].detect(function () {}).should.be_undefined
+    end
+  end
+
   describe '#each()'
     it 'should be an alias of #forEach()'
       Array.prototype.each.should.equal Array.prototype.forEach
