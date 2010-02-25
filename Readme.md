@@ -136,6 +136,10 @@ To use simply:
 
 ## Iterator Functions
 
+Ext.js allows most iterators to use _"function shorthand syantx"_,
+which allows you to define a function by passing a string,
+as shown in some of the examples below.
+
 ### Literals
 
     [1,2,3,4,5].select(function(n){ return n > 3 })
