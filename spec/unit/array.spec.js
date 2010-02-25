@@ -62,6 +62,12 @@ describe 'Array'
       [1,2,3,4].detect(function(){}).should.be_undefined
     end
     
+    it 'should accept optional context'
+      var obj = { foo: function(){ return true }}
+      obj.should.receive('foo', 'once')
+      [1,2,3,4].detect(function(){ return this.foo() }, obj).should.eql 1
+    end
+    
     it 'should allow shorthand function syntax'
       [1,2,3,4].detect('=== 3').should.eql 3
     end
