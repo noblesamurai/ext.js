@@ -1,4 +1,24 @@
 describe 'Array'
+  describe 'shorthand function syntax'
+    describe 'when given a property name is given'
+      it 'should access the property on the first argument'
+        ['foo', 'bar'].map('length').should.eql [3,3]
+      end
+    end 
+    
+    describe 'when given a method name'
+      it 'should call the method on the first argument'
+        [1,2].map('toString()').should.eql ['1', '2']
+      end
+    end
+    
+    describe 'when given large strings'
+      it 'should be a return expression'
+        [1,2,6].map('a > 5 ? true : false').should.eql [false, false, true]
+      end
+    end
+  end
+  
   describe '#each()'
     it 'should be an alias of #forEach()'
       Array.prototype.each.should.equal Array.prototype.forEach
@@ -114,7 +134,7 @@ describe 'Array'
     end
     
     it 'should work with shorthand function syntax'
-      1..5.reduce(0, '+').should.eql 15
+      1..5.reduce(0, 'a + b').should.eql 15
     end
   end
   
