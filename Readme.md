@@ -38,13 +38,13 @@ To use simply:
   * Array#at(index)
   * Array#drop(n)
   * Array#take(n)
-  * Array#reduce()
+  * Array#reduce(memo, fn[, context])
   * Array#select()
   * Array#any()
   * Array#none()
   * Array#grep(pattern)
-  * Array#detect(fn[, scope])
-  * Array#remove(obj[, fn[, scope]])
+  * Array#detect(fn[, context])
+  * Array#remove(obj[, fn[, context]])
   * Array#isEmpty
 
 ### Number
