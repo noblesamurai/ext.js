@@ -102,10 +102,6 @@ describe 'Array'
     it 'should select strings matching'
       ['foo', 'foobar', 'bar'].grep(/^foo(bar)?/).should.eql ['foo', 'foobar']
     end
-    
-    it 'should ignore other objects'
-      [1, 'foo'].grep(/foo/).should.eql ['foo']
-    end
   end
   
   describe '#reduce()'
