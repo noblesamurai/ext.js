@@ -43,6 +43,7 @@ describe 'String'
       "this,is,a,test".count(',').should.eql 3
       "this,is,another,test".count('another').should.eql 1
       "this is a question???".count('?').should.eql 3
+      "...".count(',').should.eql 0
     end
   end
 
