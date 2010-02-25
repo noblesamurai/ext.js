@@ -69,6 +69,7 @@ To use simply:
   * String#camelcase
   * String#digitize
   * String#strip
+  * String#drop(n)
   * String#before(str)
   * String#after(str)
   * String#padLeft(width[, char])
