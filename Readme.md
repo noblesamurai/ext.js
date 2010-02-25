@@ -70,6 +70,7 @@ To use simply:
   * String#digitize
   * String#strip
   * String#drop(n)
+  * String#take(n)
   * String#before(str)
   * String#after(str)
   * String#padLeft(width[, char])
