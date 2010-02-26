@@ -106,11 +106,15 @@ describe 'date'
         it 'should work with "monday"'
           var date = parse('next monday', new Date('May 1, 2001'))
           date.toString().should.match(/^Mon May 07/)
+          var date = parse('next monday', new Date('Apr 28, 2001'))
+          date.toString().should.match(/^Mon Apr 30/)
         end
 
         it 'should work with "tuesday"'
           var date = parse('next tuesday', new Date('May 1, 2001'))
           date.toString().should.match(/^Tue May 08/)
+          var date = parse('next tuesday', new Date('Apr 30, 2001'))
+          date.toString().should.match(/^Tue May 01/)
         end
 
         it 'should work with "wednesday"'
