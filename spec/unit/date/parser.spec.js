@@ -104,17 +104,13 @@ describe 'date'
     describe 'next <day>'
       describe 'given a <day>'
         it 'should work with "monday"'
-          var date = parse('next monday', new Date('May 1, 2001'))
-          date.toString().should.match(/^Mon May 07/)
-          var date = parse('next monday', new Date('Apr 28, 2001'))
+          var date = parse('next monday', new Date('Apr 29, 2001'))
           date.toString().should.match(/^Mon Apr 30/)
         end
 
         it 'should work with "tuesday"'
           var date = parse('next tuesday', new Date('May 1, 2001'))
           date.toString().should.match(/^Tue May 08/)
-          var date = parse('next tuesday', new Date('Apr 30, 2001'))
-          date.toString().should.match(/^Tue May 01/)
         end
 
         it 'should work with "wednesday"'
@@ -141,12 +137,15 @@ describe 'date'
           var date = parse('next sunday', new Date('May 1, 2001'))
           date.toString().should.match(/^Sun May 06/)
         end
-      end
-      
-      describe 'with month overflow'
-        it 'should work'
-          var date = parse('next monday', new Date('May 30, 2001'))
-          date.toString().should.match(/^Mon Jun 04/)
+        
+        it 'should work when the same day'
+          var date = parse('next tuesday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Tue May 08/)
+        end
+        
+        it 'should work when moving to the next week'
+          var date = parse('next tuesday', new Date('May 3, 2001'))
+          date.toString().should.match(/^Tue May 08/)
         end
       end
       
