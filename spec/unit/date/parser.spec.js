@@ -47,6 +47,13 @@ describe 'date'
         end
       end
       
+      describe 'with month overflow'
+        it 'should work'
+          var date = parse('next monday', new Date('May 30, 2001'))
+          date.toString().should.match(/^Mon Jun 04/)
+        end
+      end
+      
       describe 'omitting <day>'
         it 'should throw an error'
           -{ parse('next') }.should.throw_error(/expected day after next/)
