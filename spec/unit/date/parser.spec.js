@@ -3,6 +3,13 @@ parse = require('ext/date').parse
 
 describe 'date'
   describe 'parse()'
+    describe 'day'
+      it 'should work with "monday"'
+        var date = parse('monday')
+        
+      end  
+    end
+    
     describe 'month day, year'
       it 'should work'
         var date = parse('July 5, 2005')
