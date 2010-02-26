@@ -191,6 +191,8 @@ Below are some examples:
 More examples:
 
     'in a year'
+    'in one year'
+    'in five days'
 
 ## Running Tests
 

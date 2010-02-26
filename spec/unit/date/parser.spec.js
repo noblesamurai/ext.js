@@ -17,15 +17,31 @@ describe 'date'
       end
     end
     
-    describe 'in <int> <quantifier>'
+    describe 'in <number> <quantifier>'
       describe 'given "a"'
-        it 'should act as 1'
+        it 'should work'
           var date = parse('in a day', new Date('May 1, 2001'))
           date.toString().should.match(/^Wed May 02/)
         end  
       end
       
-      describe 'given <int>'
+      describe 'given a single numerical word'
+        it 'should work'
+          var date = parse('in one day', new Date('May 1, 2001'))
+          date.toString().should.match(/^Wed May 02/)
+          
+          var date = parse('in two days', new Date('May 1, 2001'))
+          date.toString().should.match(/^Thu May 03/)
+          
+          var date = parse('in six days', new Date('May 1, 2001'))
+          date.toString().should.match(/^Mon May 07/)
+          
+          var date = parse('in sixteen days', new Date('May 1, 2001'))
+          date.toString().should.match(/^Thu May 17/)
+        end
+      end
+      
+      describe 'given <number>'
         describe 'given <quantifier>'
           it 'should work'
             var date = parse('in 2 days', new Date('May 1, 2001'))
@@ -37,16 +53,16 @@ describe 'date'
         
         describe 'omitting <quantifier>'
           it 'should throw an error'
-            -{ parse('in 2') }.should.throw_error(/expected quantifier after int/)
-            -{ parse('in 2 monday') }.should.throw_error(/expected quantifier after int/)
+            -{ parse('in 2') }.should.throw_error(/expected quantifier after number/)
+            -{ parse('in 2 monday') }.should.throw_error(/expected quantifier after number/)
           end
         end
       end
       
-      describe 'omitting <int>'
+      describe 'omitting <number>'
         it 'should throw an error'
-          -{ parse('in') }.should.throw_error(/expected int after in/)
-          -{ parse('in monday') }.should.throw_error(/expected int after in/)
+          -{ parse('in') }.should.throw_error(/expected number after in/)
+          -{ parse('in monday') }.should.throw_error(/expected number after in/)
         end
       end
     end
