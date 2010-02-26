@@ -187,6 +187,10 @@ Below are some examples:
     
     parse('next tuesday')
     // => Tue, 02 Mar 2010 19:16:47 GMT
+    
+More examples:
+
+    'in a year'
 
 ## Running Tests
 
