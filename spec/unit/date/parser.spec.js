@@ -16,6 +16,17 @@ describe 'date'
         date.toString().should.match(/^Tue May 01/)
       end
     end
+    
+    describe 'in <int> <quantifier>'
+      describe 'given <int>'
+        describe 'given <quantifier>'
+          it 'should work'
+            var date = parse('in 2 days', new Date('May 1, 2001'))
+            date.toString().should.match(/^Thu May 03/)
+          end
+        end
+      end
+    end
   
     describe '<day>'
       it 'should work like "next <day>"'
