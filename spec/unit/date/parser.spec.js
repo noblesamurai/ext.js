@@ -12,31 +12,38 @@ describe 'date'
     describe 'next <day>'
       describe 'given a <day>'
         it 'should work with "monday"'
-          parse('next monday').day.should.eql 1
+          var date = parse('next monday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Mon May 07/)
         end
 
         it 'should work with "tuesday"'
-          parse('next tuesday').day.should.eql 2
+          var date = parse('next tuesday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Tue May 08/)
         end
 
         it 'should work with "wednesday"'
-          parse('next wednesday').day.should.eql 3
+          var date = parse('next wednesday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Wed May 09/)
         end
 
         it 'should work with "thursday"'
-          parse('next thursday').day.should.eql 4
+          var date = parse('next thursday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Thu May 10/)
         end
 
         it 'should work with "friday"'
-          parse('next friday').day.should.eql 5
+          var date = parse('next friday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Fri May 11/)
         end
 
         it 'should work with "saturday"'
-          parse('next saturday').day.should.eql 6
+          var date = parse('next saturday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Sat May 12/)
         end
 
         it 'should work with "sunday"'
-          parse('next sunday').day.should.eql 0
+          var date = parse('next sunday', new Date('May 1, 2001'))
+          date.toString().should.match(/^Sun May 13/)
         end
       end
       
