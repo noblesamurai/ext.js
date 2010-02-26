@@ -16,6 +16,33 @@ describe 'date'
         date.toString().should.match(/^Tue May 01/)
       end
     end
+    
+    describe 'in <int> <quantifier>'
+      describe 'given <int>'
+        describe 'given <quantifier>'
+          it 'should work'
+            var date = parse('in 2 days', new Date('May 1, 2001'))
+            date.toString().should.match(/^Thu May 03/)
+            var date = parse('in 3 years', new Date('May 1, 2001'))
+            date.year.should.eql 2004
+          end
+        end
+        
+        describe 'omitting <quantifier>'
+          it 'should throw an error'
+            -{ parse('in 2') }.should.throw_error(/expected quantifier after int/)
+            -{ parse('in 2 monday') }.should.throw_error(/expected quantifier after int/)
+          end
+        end
+      end
+      
+      describe 'omitting <int>'
+        it 'should throw an error'
+          -{ parse('in') }.should.throw_error(/expected int after in/)
+          -{ parse('in monday') }.should.throw_error(/expected int after in/)
+        end
+      end
+    end
   
     describe '<day>'
       it 'should work like "next <day>"'
