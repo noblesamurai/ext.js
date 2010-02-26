@@ -48,6 +48,13 @@ describe 'date'
         end
       end
       
+      describe 'given a prefix, numerical word'
+        it 'should work'
+          var date = parse('in twenty two days', new Date('May 1, 2001'))
+          date.toString().should.match(/^Wed May 23/)
+        end
+      end
+      
       describe 'given <number>'
         describe 'given <quantifier>'
           it 'should work'

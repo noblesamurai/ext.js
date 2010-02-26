@@ -194,6 +194,7 @@ More examples:
     'in one year'
     'in five days'
     'in three hundred minutes'
+    'in fifty two minutes'
 
 ## Running Tests
 
