@@ -196,6 +196,7 @@ More examples:
     'in three hundred minutes'
     'in fifty two minutes'
     'in seventy five trillion seconds'
+    'in five and a half minutes'
 
 ## Running Tests
 

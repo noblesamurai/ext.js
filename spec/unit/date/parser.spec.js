@@ -55,10 +55,17 @@ describe 'date'
         end
       end
       
-      describe 'given a prefix, numberical word and suffix'
+      describe 'given a prefix, numerical word and suffix'
         it 'should work'
           var date = parse('in twenty three million minutes', new Date('May 1, 2001'))
           date.year.should.eql 2045
+        end
+      end
+      
+      describe 'given a numerical word followed by "and a half"'
+        it 'should work'
+          var date = parse('in three and a half days', new Date('May 1, 2001'))
+          date.toString().should.match(/^Fri May 04 2001 12:00:00/)
         end
       end
       
