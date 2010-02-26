@@ -41,6 +41,13 @@ describe 'date'
         end
       end
       
+      describe 'given a numerical word and suffix'
+        it 'should work'
+          var date = parse('in five hundred days', new Date('May 1, 2001'))
+          date.toString().should.match(/^Fri Sep 13 2002/)
+        end
+      end
+      
       describe 'given <number>'
         describe 'given <quantifier>'
           it 'should work'
