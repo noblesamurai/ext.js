@@ -195,6 +195,7 @@ More examples:
     'in five days'
     'in three hundred minutes'
     'in fifty two minutes'
+    'in seventy five trillion seconds'
 
 ## Running Tests
 

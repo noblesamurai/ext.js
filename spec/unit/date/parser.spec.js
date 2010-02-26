@@ -55,6 +55,13 @@ describe 'date'
         end
       end
       
+      describe 'given a prefix, numberical word and suffix'
+        it 'should work'
+          var date = parse('in twenty three million minutes', new Date('May 1, 2001'))
+          date.year.should.eql 2045
+        end
+      end
+      
       describe 'given <number>'
         describe 'given <quantifier>'
           it 'should work'
