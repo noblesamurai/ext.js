@@ -25,6 +25,20 @@ describe 'date'
             date.toString().should.match(/^Thu May 03/)
           end
         end
+        
+        describe 'omitting <quantifier>'
+          it 'should throw an error'
+            -{ parse('in 2') }.should.throw_error(/expected quantifier after int/)
+            -{ parse('in 2 monday') }.should.throw_error(/expected quantifier after int/)
+          end
+        end
+      end
+      
+      describe 'omitting <int>'
+        it 'should throw an error'
+          -{ parse('in') }.should.throw_error(/expected int after in/)
+          -{ parse('in monday') }.should.throw_error(/expected int after in/)
+        end
       end
     end
   
