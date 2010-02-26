@@ -89,6 +89,8 @@ To use simply:
   * String#wrap(prefix[, suffix])
   * String#singular
   * String#plural
+  * String#isPlural
+  * String#isSingular
   * String#includes(str)
   * String#gsub(pattern, replacement[, scope])
   * String#count(str)
