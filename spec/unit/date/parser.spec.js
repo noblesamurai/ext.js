@@ -135,7 +135,7 @@ describe 'date'
 
         it 'should work with "sunday"'
           var date = parse('next sunday', new Date('May 1, 2001'))
-          date.toString().should.match(/^Sun May 13/)
+          date.toString().should.match(/^Sun May 06/)
         end
       end
       
