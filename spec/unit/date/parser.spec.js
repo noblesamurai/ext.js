@@ -9,6 +9,13 @@ describe 'date'
         parse('today', now).should.eql now
       end
     end
+    
+    describe 'yesterday'
+      it 'should work'
+        var date = parse('yesterday', new Date('May 2, 2001'))
+        date.toString().should.match(/^Tue May 01/)
+      end
+    end
   
     describe '<day>'
       it 'should work like "next <day>"'
