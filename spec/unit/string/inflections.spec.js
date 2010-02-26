@@ -13,9 +13,8 @@ describe 'String inflections'
     end
 
     it 'should singularize and pluralize given strings'
-      for (var i = 0; i < testStrings.length; i++) {
+      for (var i = 0; i < testStrings.length; i++)
         (testStrings[i].plural.singular == testStrings[i]).should.be_true
-      }
     end
   end
 
