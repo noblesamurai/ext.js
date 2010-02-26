@@ -115,22 +115,23 @@ describe 'date'
 
         it 'should work with "wednesday"'
           var date = parse('next wednesday', new Date('May 1, 2001'))
-          date.toString().should.match(/^Wed May 09/)
+          require('sys').p(date.toString())
+          date.toString().should.match(/^Wed May 02/)
         end
 
         it 'should work with "thursday"'
           var date = parse('next thursday', new Date('May 1, 2001'))
-          date.toString().should.match(/^Thu May 10/)
+          date.toString().should.match(/^Thu May 03/)
         end
 
         it 'should work with "friday"'
           var date = parse('next friday', new Date('May 1, 2001'))
-          date.toString().should.match(/^Fri May 11/)
+          date.toString().should.match(/^Fri May 04/)
         end
 
         it 'should work with "saturday"'
           var date = parse('next saturday', new Date('May 1, 2001'))
-          date.toString().should.match(/^Sat May 12/)
+          date.toString().should.match(/^Sat May 05/)
         end
 
         it 'should work with "sunday"'
