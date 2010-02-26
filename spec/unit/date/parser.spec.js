@@ -18,6 +18,13 @@ describe 'date'
     end
     
     describe 'in <int> <quantifier>'
+      describe 'given "a"'
+        it 'should act as 1'
+          var date = parse('in a day', new Date('May 1, 2001'))
+          date.toString().should.match(/^Wed May 02/)
+        end  
+      end
+      
       describe 'given <int>'
         describe 'given <quantifier>'
           it 'should work'
