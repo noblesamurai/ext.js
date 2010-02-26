@@ -3,6 +3,13 @@ parse = require('ext/date').parse
 
 describe 'date'
   describe 'parse()'
+    describe 'today'
+      it 'should work'
+        var now = new Date
+        parse('today', now).should.eql now
+      end
+    end
+  
     describe '<day>'
       it 'should work like "next <day>"'
         parse('thursday').day.should.eql 4
