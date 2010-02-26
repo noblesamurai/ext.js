@@ -34,9 +34,18 @@ describe 'date'
     end
     
     describe 'next <day>'
-      it 'should work'
-        var date = parse('next thursday')
-      end  
+      describe 'given a <day>'
+        it 'should work'
+          parse('next thursday').day.should.eql 4
+        end
+      end
+      
+      describe 'omitting <day>'
+        it 'should throw an error'
+          -{ parse('next') }.should.throw_error(/expected day after next/)
+          -{ parse('next next') }.should.throw_error(/expected day after next/)
+        end
+      end
     end
     
   end
