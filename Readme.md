@@ -193,6 +193,7 @@ More examples:
     'in a year'
     'in one year'
     'in five days'
+    'in three hundred minutes'
 
 ## Running Tests
 
