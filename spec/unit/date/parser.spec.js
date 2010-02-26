@@ -119,7 +119,6 @@ describe 'date'
 
         it 'should work with "wednesday"'
           var date = parse('next wednesday', new Date('May 1, 2001'))
-          require('sys').p(date.toString())
           date.toString().should.match(/^Wed May 02/)
         end
 
