@@ -3,20 +3,18 @@ parse = require('ext/date').parse
 
 describe 'date'
   describe 'parse()'
-    describe 'day'
+    describe '<day>'
       it 'should work with "monday"'
         var date = parse('monday')
         
       end  
     end
     
-    describe 'month day, year'
+    describe 'next <day>'
       it 'should work'
-        var date = parse('July 5, 2005')
-        date.monthName.should.eql 'July'
-        date.date.should.eql 5
-        date.year.should.eql 2005
-      end
+        var date = parse('next thursday')
+      end  
     end
+    
   end
 end
