@@ -23,6 +23,8 @@ describe 'date'
           it 'should work'
             var date = parse('in 2 days', new Date('May 1, 2001'))
             date.toString().should.match(/^Thu May 03/)
+            var date = parse('in 3 years', new Date('May 1, 2001'))
+            date.year.should.eql 2004
           end
         end
         
