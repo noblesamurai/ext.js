@@ -164,6 +164,25 @@ describe 'Object'
     end
   end
 
+  describe '#reject'
+    it 'should return an object containing only the properties the testing function returned false for'
+      {foo: 'bar', baz: 'baz'}.reject(function (x) { return x === 'bar' }).should.eql {baz: 'baz'}
+    end
+
+    it 'should support a given context'
+      var obj = { foo: 'bar' }
+      {foo: 'bar', bar: 'baz'}.reject(function (x) { return x === this.foo }, obj).should.eql {bar: 'baz'}
+    end
+
+    it 'should pass the arguments in the expected order'
+      var obj = { foo: 'bar' }, args
+      obj.reject(function () { args = arguments })
+      args[0].should.eql 'bar'
+      args[1].should.eql 'foo'
+      args[2].should.eql obj
+    end
+  end
+
   describe '#respondsTo'
     it 'should return true if the object responds to the given key'
       { f: function () {} }.respondsTo('f').should.be_true
