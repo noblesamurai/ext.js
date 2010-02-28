@@ -27,7 +27,7 @@ To use simply:
 
 ### Array
 
-  * Array#each(fn)
+  * Array#each(fn[, context])
   * Array#excludes(item[, item, ...])
   * Array#includes(item[, item, ...])
   * Array#clear
