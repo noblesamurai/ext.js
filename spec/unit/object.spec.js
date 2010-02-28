@@ -98,5 +98,15 @@ describe 'Object'
       args[2].should.eql obj
     end
   end
+
+  describe '#respondsTo'
+    it 'should return true if the object responds to the given key'
+      { f: function () {} }.respondsTo('f').should.be_true
+    end
+
+    it 'should return false if the object does not respond to the given key'
+      {}.respondsTo('f').should.be_false
+    end
+  end
 end
 

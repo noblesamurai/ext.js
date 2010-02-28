@@ -23,6 +23,7 @@ To use simply:
   * Object#merge(obj[, reverse])
   * Object#each(fn[, context])
   * Object#map(fn[, context])
+  * Object#respondsTo(key)
 
 ### Array
 
