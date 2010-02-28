@@ -61,6 +61,12 @@ describe 'Array'
       1..4.each(function(val, i){ vals.push(i) })
       vals.should.eql 0..3
     end
+
+    it 'should pass _this_ as the third argument'
+      var result;
+      1..4.each(function(val, i, thisp){ result = thisp })
+      result.should.eql 1..4
+    end
   end
 
   describe '#reduce()'
