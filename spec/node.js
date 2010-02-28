@@ -8,7 +8,6 @@ if (process.ARGV[2])
   JSpec.exec('spec/unit/' + process.ARGV[2] + '.spec.js')
 else
   JSpec
-    .exec('spec/unit/object.spec.js')
     .exec('spec/unit/base64.spec.js')
     .exec('spec/unit/number.spec.js')
     .exec('spec/unit/printf.spec.js')
@@ -17,6 +16,8 @@ else
     .exec('spec/unit/regexp.spec.js')
     .exec('spec/unit/date/parser.spec.js')
     .exec('spec/unit/date/extensions.spec.js')
+    .exec('spec/unit/object/iterators.spec.js')
+    .exec('spec/unit/object/extensions.spec.js')
     .exec('spec/unit/string/extensions.spec.js')
     .exec('spec/unit/string/inflections.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
