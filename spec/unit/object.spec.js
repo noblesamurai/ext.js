@@ -118,6 +118,29 @@ describe 'Object'
     end
   end
 
+  describe '#every'
+    it 'should return true if every satisfies the provided testing function'
+      { foo: 'bar', baz: 'bar' }.every(function (x) { return x === 'bar' }).should.be_true
+    end
+
+    it 'should return false if at least one property does not satisfy the provided testing function'
+      { foo: 'bar', baz: 'baz' }.every(function (x) { return x === 'bar' }).should.be_false
+    end
+
+    it 'should support a given context'
+      var obj = { foo: 'bar' }
+      {foo: 'bar', foo2: 'bar'}.every(function (x) { return x === this.foo }, obj).should.be_true
+    end
+
+    it 'should pass the arguments in the expected order'
+      var obj = { foo: 'bar' }, args
+      obj.every(function () { args = arguments })
+      args[0].should.eql 'bar'
+      args[1].should.eql 'foo'
+      args[2].should.eql obj
+    end
+  end
+
   describe '#respondsTo'
     it 'should return true if the object responds to the given key'
       { f: function () {} }.respondsTo('f').should.be_true

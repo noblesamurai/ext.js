@@ -24,6 +24,7 @@ To use simply:
   * Object#each(fn[, context])
   * Object#map(fn[, context])
   * Object#filter(fn[, context])
+  * Object#every(fn[, context])
   * Object#respondsTo(key)
 
 ### Array
