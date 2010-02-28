@@ -20,6 +20,7 @@ To use simply:
   * Object#keys
   * Object#values
   * Object#tap(fn[, context])
+  * Object#merge(obj[, reverse])
 
 ### Array
 
