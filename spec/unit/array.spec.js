@@ -61,29 +61,29 @@ describe 'Array'
     it 'should return undefined if the given function never returns true'
       [1,2,3,4].detect(function(){}).should.be_undefined
     end
-    
+
     it 'should accept optional context'
       var obj = { foo: function(){ return true }}
       obj.should.receive('foo', 'once')
       [1,2,3,4].detect(function(){ return this.foo() }, obj).should.eql 1
     end
-    
+
     it 'should allow shorthand function syntax'
       [1,2,3,4].detect('=== 3').should.eql 3
     end
   end
-  
+
   describe '#each()'
     it 'should be an alias of #forEach()'
       Array.prototype.each.should.equal Array.prototype.forEach
     end
-    
+
     it 'should pass val as the first argument'
       var vals = [];
       1..4.each(function(val){ vals.push(val) })
       vals.should.eql 1..4
     end
-    
+
     it 'should pass index as the second argument'
       var vals = [];
       1..4.each(function(val, i){ vals.push(i) })
@@ -198,12 +198,12 @@ describe 'Array'
       })
       evens.should.eql [2,4,6,8,10]
     end
-    
+
     it 'should allow optional context'
       var obj = { foo: 'bar' }
       1..3.reduce([], function(){ return this.foo }, obj).should.eql 'bar'
     end
-    
+
     it 'should work with shorthand function syntax'
       1..5.reduce(0, 'a + b').should.eql 15
     end
@@ -214,7 +214,7 @@ describe 'Array'
       var evens = 1..10.select(function(n){ return n % 2 === 0 })
       evens.should.eql [2,4,6,8,10]
     end
-    
+
     it 'should allow optional context'
       var obj = { foo: function(){}}
       obj.should.receive('foo', 'twice')
@@ -225,13 +225,13 @@ describe 'Array'
       1..10.select('a % 2 === 0').should.eql [2,4,6,8,10]
     end
   end
-  
+
   describe '#reject()'
     it 'should reject values when truthy'
       var odds = 1..10.reject(function(n){ return n % 2 === 0 })
       odds.should.eql [1,3,5,7,9]
     end
-    
+
     it 'should allow optional context'
       var obj = { foo: function(){}}
       obj.should.receive('foo', 'twice')
@@ -247,7 +247,7 @@ describe 'Array'
     it 'should return values returned by the given callback'
       1..3.map(function(n){ return ++n }).should.eql [2,3,4]
     end
-    
+
     it 'should allow optional context'
       var obj = { foo: 'bar' }
       1..3.map(function(){ return this.foo }, obj).should.eql ['bar', 'bar', 'bar']
@@ -266,7 +266,7 @@ describe 'Array'
     it 'should return false when none evaluate to true'
       1..5.any(function(n){ return n > 5 }).should.be_false
     end
-    
+
     it 'should allow optional context'
       var obj = { foo: function(){}}
       obj.should.receive('foo', 'twice')
@@ -286,7 +286,7 @@ describe 'Array'
     it 'should return false when any evaluate to true'
       1..10.none(function(n){ return n > 5 }).should.be_false
     end
-    
+
     it 'should allow optional context'
       var obj = { foo: function(){}}
       obj.should.receive('foo', 'twice')
