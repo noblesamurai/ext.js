@@ -18,6 +18,8 @@ To use simply:
 
   * Object#clone
   * Object#keys
+  * Object#values
+  * Object#tap(fn[, context])
 
 ### Array
 
@@ -162,7 +164,7 @@ as shown in some of the examples below.
 
     [1,2,3,4,5].select('> 3')
     // => [4,5]
-    
+
 ## Date Parsing
 
 The module _ext/date_ exports the **parse()** function which accepts
@@ -172,22 +174,22 @@ Below are some examples:
 
     new Date
     // => Fri, 26 Feb 2010 19:16:47 GMT
-    
+
     parse('today')
     // => Fri, 26 Feb 2010 19:16:47 GMT
-    
+
     parse('yesterday')
     // => Thu, 25 Feb 2010 19:16:47 GMT
-    
+
     parse('in 5 hours')
     // => Sat, 27 Feb 2010 00:16:47 GMT
-    
+
     parse('in 2 days')
     // => Sun, 28 Feb 2010 19:16:47 GMT
-    
+
     parse('next tuesday')
     // => Tue, 02 Mar 2010 19:16:47 GMT
-    
+
 More examples:
 
     'in a year'
