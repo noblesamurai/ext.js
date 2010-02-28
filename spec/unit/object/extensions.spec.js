@@ -7,6 +7,19 @@ describe 'Object'
       a.should.not.equal b
       b.should.have_property 'foo', 'bar'
     end
+
+    it 'should not depend on changes in the orignal object'
+      var a = { foo: 'bar' }
+      var b = a.clone
+      a.foo = 'baz'
+      b.foo.should.eql 'bar'
+    end
+
+    it 'should not have the original object in its prototype chain'
+      var a = { foo: 'bar' }
+      var b = a.clone
+      b.__proto__.should.eql a.__proto__
+    end
   end
 
   describe '#keys'
