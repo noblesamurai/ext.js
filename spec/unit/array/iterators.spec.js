@@ -80,6 +80,11 @@ describe 'Array'
     it 'should work with shorthand function syntax'
       1..5.reduce(0, 'a + b').should.eql 15
     end
+
+    it 'should be ECMAScript compliant'
+      [0,1,2,3].reduce(function(a, b) { return a + b }).should.eql 6
+      [[0,1], [2,3], [4,5]].reduce(function(a, b) { return a.concat(b) }, []).should.eql [0,1,2,3,4,5]
+    end
   end
 
   describe '#select()'
