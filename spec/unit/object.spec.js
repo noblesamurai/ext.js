@@ -20,5 +20,19 @@ describe 'Object'
       { foo: 'bar', baz: 'raz' }.values.should.eql ['bar', 'raz']
     end
   end
+
+  describe '#tap'
+    it 'should allow to tap into function call chains'
+      var result
+      'user_names'.camelcase.tap(function (x) { result = x }).singular.should.eql 'UserName'
+      (result == 'UserNames').should.be_true
+    end
+
+    it 'should support a given context'
+      var result, obj = { foo: 'bar' }
+      'user_names'.camelcase.tap(function (x) { result = (x + this.foo) }, obj).singular.should.eql 'UserName'
+      result.should.eql 'UserNamesbar'
+    end
+  end
 end
 
