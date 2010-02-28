@@ -57,5 +57,24 @@ describe 'Object'
       target.foo.should.be_false
     end
   end
+
+  describe '#map'
+    it 'should map the object'
+      { foo: 1 }.map(function (x) { return x + 1 }).foo.should.eql 2
+    end
+
+    it 'should support a given context'
+      var obj = { foo: 41 }
+      { foo: 1 }.map(function (x) { return x + this.foo }, obj).foo.should.eql 42
+    end
+
+    it 'should pass the arguments in the expected order'
+      var obj = { foo: 'bar' }, args
+      obj.map(function () { args = arguments })
+      args[0].should.eql 'bar'
+      args[1].should.eql 'foo'
+      args[2].should.eql obj
+    end
+  end
 end
 

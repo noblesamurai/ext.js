@@ -21,6 +21,7 @@ To use simply:
   * Object#values
   * Object#tap(fn[, context])
   * Object#merge(obj[, reverse])
+  * Object#map(fn[, context])
 
 ### Array
 
