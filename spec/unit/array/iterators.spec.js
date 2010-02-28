@@ -23,16 +23,6 @@ describe 'Array'
         [1,2,6].map('a > 5 ? true : false').should.eql [false, false, true]
       end
     end
-
-    describe 'ECMAScript compatibility'
-      it 'should be compliant'
-        var obj = { incr: 1 }, args
-        1..3.map(function (value) {  args = arguments; return value + this.incr }, obj).should.eql 2..4
-        args[0].should.eql 3
-        args[1].should.eql 2
-        args[2].should.eql 1..3
-      end
-    end
   end
 
   describe '#detect()'
@@ -138,6 +128,14 @@ describe 'Array'
 
     it 'should work with shorthand function syntax'
       ['foo', 'bar'].map('length').should.eql [3,3]
+    end
+
+    it 'should be ECMAScript compliant'
+      var obj = { incr: 1 }, args
+      1..3.map(function (value) {  args = arguments; return value + this.incr }, obj).should.eql 2..4
+      args[0].should.eql 3
+      args[1].should.eql 2
+      args[2].should.eql 1..3
     end
   end
 
