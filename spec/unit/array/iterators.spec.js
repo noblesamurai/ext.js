@@ -27,21 +27,21 @@ describe 'Array'
 
   describe '#detect()'
     it 'should return the first element the given function returns true for'
-      [1,2,3,4].detect(function (e) { return e === 3 }).should.eql 3
+      1..4.detect(function (e) { return e === 3 }).should.eql 3
     end
 
     it 'should return undefined if the given function never returns true'
-      [1,2,3,4].detect(function(){}).should.be_undefined
+      1..4.detect(function(){}).should.be_undefined
     end
 
     it 'should accept optional context'
       var obj = { foo: function(){ return true }}
       obj.should.receive('foo', 'once')
-      [1,2,3,4].detect(function(){ return this.foo() }, obj).should.eql 1
+      1..4.detect(function(){ return this.foo() }, obj).should.eql 1
     end
 
     it 'should allow shorthand function syntax'
-      [1,2,3,4].detect('=== 3').should.eql 3
+      1..4.detect('=== 3').should.eql 3
     end
   end
 
@@ -88,8 +88,8 @@ describe 'Array'
     end
 
     it 'should be ECMAScript compliant'
-      [0,1,2,3].reduce(function(a, b) { return a + b }).should.eql 6
-      [[0,1], [2,3], [4,5]].reduce(function(a, b) { return a.concat(b) }, []).should.eql [0,1,2,3,4,5]
+      0..3.reduce(function(a, b) { return a + b }).should.eql 6
+      [[0,1], [2,3], [4,5]].reduce(function(a, b) { return a.concat(b) }, []).should.eql 0..5
     end
   end
 
