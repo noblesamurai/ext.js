@@ -47,7 +47,7 @@ To use simply:
   * Array#at(index)
   * Array#drop(n)
   * Array#take(n)
-  * Array#reduce(memo, fn[, context])
+  * Array#reduce(fn[, memo])
   * Array#select(fn[, context])
   * Array#reject(fn[, context])
   * Array#any(fn[, context])
