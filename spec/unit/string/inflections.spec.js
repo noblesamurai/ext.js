@@ -17,30 +17,30 @@ describe 'String inflections'
         (testStrings[i].plural.singular == testStrings[i]).should.be_true
     end
   end
-  
+
   describe '#isPlural'
     it 'should be true when plural'
       'people'.isPlural.should.be_true
     end
-    
+
     it 'should be false when singular'
       'person'.isPlural.should.be_false
     end
-    
+
     it 'should be true when uncountable'
       'series'.isPlural.should.be_true
     end
   end
-  
+
   describe '#isSingular'
     it 'should be true when singular'
       'person'.isSingular.should.be_true
     end
-    
+
     it 'should be false when plural'
       'people'.isSingular.should.be_false
     end
-    
+
     it 'should be true when uncountable'
       'sheep'.isSingular.should.be_true
     end

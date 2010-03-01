@@ -18,10 +18,20 @@ To use simply:
 
   * Object#clone
   * Object#keys
+  * Object#values
+  * Object#tap(fn[, context])
+  * Object#merge(obj[, reverse])
+  * Object#each(fn[, context])
+  * Object#map(fn[, context])
+  * Object#filter(fn[, context]) aliased as select()
+  * Object#every(fn[, context]) aliased as all()
+  * Object#some(fn[, context]) aliased as any()
+  * Object#reject(fn[, context])
+  * Object#respondsTo(key)
 
 ### Array
 
-  * Array#each(fn)
+  * Array#each(fn[, context])
   * Array#excludes(item[, item, ...])
   * Array#includes(item[, item, ...])
   * Array#clear
@@ -37,13 +47,13 @@ To use simply:
   * Array#at(index)
   * Array#drop(n)
   * Array#take(n)
-  * Array#reduce(memo, fn[, context])
-  * Array#select(fn[, context])
+  * Array#reduce(fn[, memo])
   * Array#reject(fn[, context])
-  * Array#any(fn[, context])
+  * Array#filter(fn[, context]) aliased as select()
+  * Array#some(fn[, context]) aliased as any()
+  * Array#detect(fn[, context]) aliased as find()
   * Array#none(fn[, context])
   * Array#grep(pattern)
-  * Array#detect(fn[, context])
   * Array#remove(obj[, fn[, context]])
   * Array#isEmpty
 
@@ -139,7 +149,7 @@ To use simply:
 
 ## Iterator Functions
 
-Ext.js allows most iterators to use _"function shorthand syantx"_,
+Ext.js allows most iterators to use _"function shorthand syntax"_,
 which allows you to define a function by passing a string,
 as shown in some of the examples below.
 
@@ -162,7 +172,7 @@ as shown in some of the examples below.
 
     [1,2,3,4,5].select('> 3')
     // => [4,5]
-    
+
 ## Date Parsing
 
 The module _ext/date_ exports the **parse()** function which accepts
@@ -172,22 +182,22 @@ Below are some examples:
 
     new Date
     // => Fri, 26 Feb 2010 19:16:47 GMT
-    
+
     parse('today')
     // => Fri, 26 Feb 2010 19:16:47 GMT
-    
+
     parse('yesterday')
     // => Thu, 25 Feb 2010 19:16:47 GMT
-    
+
     parse('in 5 hours')
     // => Sat, 27 Feb 2010 00:16:47 GMT
-    
+
     parse('in 2 days')
     // => Sun, 28 Feb 2010 19:16:47 GMT
-    
+
     parse('next tuesday')
     // => Tue, 02 Mar 2010 19:16:47 GMT
-    
+
 More examples:
 
     'in a year'
