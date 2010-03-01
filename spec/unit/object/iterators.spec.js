@@ -17,6 +17,10 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
+    
+    it 'should support short-hand function syntax'
+      { foo: 1 }.map('a + 1').foo.should.eql 2
+    end
   end
 
   describe '#each()'
@@ -62,6 +66,10 @@ describe 'Object'
     it 'should be aliased as #select()'
       {}.select.should.equal {}.filter
     end
+    
+    it 'should support short-hand function syntax'
+      { foo: 'bar' }.filter('.length > 3').should.eql {}
+    end
   end
 
   describe '#every()'
@@ -88,6 +96,10 @@ describe 'Object'
     
     it 'should be aliased as #all()'
       {}.every.should.equal {}.all
+    end
+    
+    it 'should support short-hand function syntax'
+      { foo: 'bar' }.every('=== "bar"').should.be_true
     end
   end
 
@@ -116,6 +128,10 @@ describe 'Object'
     it 'should be aliased as #any()'
       {}.some.should.equal {}.any
     end
+    
+    it 'should support short-hand function syntax'
+      { foo: 'bar' }.some('=== "bar"').should.be_true
+    end
   end
 
   describe '#reject()'
@@ -134,6 +150,10 @@ describe 'Object'
       args[0].should.eql 'bar'
       args[1].should.eql 'foo'
       args[2].should.eql obj
+    end
+    
+    it 'should support short-hand function syntax'
+      { foo: 'bar' }.reject('=== "bar"').should.eql {}
     end
   end
 end
