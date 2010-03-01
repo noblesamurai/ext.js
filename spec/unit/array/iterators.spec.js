@@ -2,7 +2,7 @@ describe 'Array'
   describe 'shorthand function syntax'
     describe 'when given binary operators'
       it 'should evaluate against the first argument'
-        1..10.select('> 5').should.eql 6..10
+        1..10.filter('> 5').should.eql 6..10
       end
     end
 
@@ -93,20 +93,20 @@ describe 'Array'
     end
   end
 
-  describe '#select()'
+  describe '#filter()'
     it 'should collect values when truthy'
-      var evens = 1..10.select(function(n){ return n % 2 === 0 })
+      var evens = 1..10.filter(function(n){ return n % 2 === 0 })
       evens.should.eql [2,4,6,8,10]
     end
 
     it 'should allow optional context'
       var obj = { foo: function(){}}
       obj.should.receive('foo', 'twice')
-      ;[1,2].select(function(){ return this.foo() }, obj)
+      ;[1,2].filter(function(){ return this.foo() }, obj)
     end
 
     it 'should work with shorthand function syntax'
-      1..10.select('a % 2 === 0').should.eql [2,4,6,8,10]
+      1..10.filter('a % 2 === 0').should.eql [2,4,6,8,10]
     end
   end
 
