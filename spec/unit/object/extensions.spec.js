@@ -1,27 +1,5 @@
 
 describe 'Object'
-  describe '#clone'
-    it 'should return a copy'
-      var a = { foo: 'bar' }
-      var b = a.clone
-      a.should.not.equal b
-      b.should.have_property 'foo', 'bar'
-    end
-
-    it 'should not reflect changes to the orignal object'
-      var a = { foo: 'bar' }
-      var b = a.clone
-      a.foo = 'baz'
-      b.foo.should.eql 'bar'
-    end
-
-    it 'should not have the original object in its prototype chain'
-      var a = { foo: 'bar' }
-      var b = a.clone
-      b.__proto__.should.eql a.__proto__
-    end
-  end
-
   describe '#keys'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']

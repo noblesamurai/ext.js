@@ -16,7 +16,6 @@ To use simply:
 
 ### Object
 
-  * Object#clone
   * Object#keys
   * Object#values
   * Object#tap(fn[, context])
