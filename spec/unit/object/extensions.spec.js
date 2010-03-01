@@ -62,13 +62,6 @@ describe 'Object'
       target.merge(source)
       target.foo.should.eql 'bar'
     end
-
-    it 'should give the object receiving the merge precendence if `reverse` is true'
-      var source = { foo: 'bar' }
-      var target = { foo: false }
-      target.merge(source, true)
-      target.foo.should.be_false
-    end
   end
 
   describe '#respondsTo'
