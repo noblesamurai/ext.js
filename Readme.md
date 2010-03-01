@@ -173,6 +173,11 @@ as shown in some of the examples below.
 
     [1,2,3,4,5].select('> 3')
     // => [4,5]
+    
+### Object Usage
+
+    { foo: 'bar', baz: 'something' }.select(".length > 3")
+    // => { baz: 'something' }
 
 ## Date Parsing
 
