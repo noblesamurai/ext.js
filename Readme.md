@@ -149,7 +149,7 @@ To use simply:
 
 ## Iterator Functions
 
-Ext.js allows most iterators to use _"function shorthand syantx"_,
+Ext.js allows most iterators to use _"function shorthand syntax"_,
 which allows you to define a function by passing a string,
 as shown in some of the examples below.
 
