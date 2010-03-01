@@ -71,25 +71,19 @@ describe 'Array'
 
   describe '#reduce()'
     it 'should iterate with memo object'
-      var evens = 1..10.reduce([], function(evens, n){
+      var evens = 1..10.reduce(function(evens, n){
         if (n % 2 === 0) evens.push(n)
         return evens
-      })
+      }, [])
       evens.should.eql [2,4,6,8,10]
-    end
-
-    it 'should allow optional context'
-      var obj = { foo: 'bar' }
-      1..3.reduce([], function(){ return this.foo }, obj).should.eql 'bar'
     end
 
     it 'should work with shorthand function syntax'
       1..5.reduce(0, 'a + b').should.eql 15
     end
-
-    it 'should be ECMAScript compliant'
-      0..3.reduce(function(a, b) { return a + b }).should.eql 6
-      [[0,1], [2,3], [4,5]].reduce(function(a, b) { return a.concat(b) }, []).should.eql 0..5
+    
+    it 'should shift the first value when no memo is provided'
+      1..5.reduce(function(a, b){ return a + b }).should.eql 15
     end
   end
 
