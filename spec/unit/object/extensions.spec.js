@@ -68,6 +68,10 @@ describe 'Object'
     it 'should return true if the object responds to the given key'
       { f: function () {} }.respondsTo('f').should.be_true
     end
+    
+    it 'should return true when the object inherits a function'
+      ''.respondsTo('toString').should.be_true
+    end
 
     it 'should return false if the object does not respond to the given key'
       {}.respondsTo('f').should.be_false
