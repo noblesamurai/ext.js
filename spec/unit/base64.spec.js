@@ -7,6 +7,10 @@ describe 'base64'
       base64.encode('foo').should.eql 'Zm9v'
       'foo'.base64Encode.should.eql 'Zm9v'
     end
+
+    it 'should coerce types'
+      base64.encode(5).should.eql 'NQ=='
+    end
   end
 
   describe '.decode()'
