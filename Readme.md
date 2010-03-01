@@ -122,6 +122,7 @@ To use simply:
   * Date#format(str)
   * Date#inWordsSince(date)
   * Date#inWordsSinceNow
+  * Date#parse(str)
   * parse(str[, date])
 
 ### RegExp

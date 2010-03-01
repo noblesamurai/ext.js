@@ -2,6 +2,13 @@
 parse = require('ext/date').parse
 
 describe 'date'
+  describe '#parse()'
+    it 'should pass self as "now"'
+      var date = new Date('May 2, 2001')
+      date.parse('in two years').year.should.eql 2003
+    end  
+  end
+  
   describe 'parse()'
     describe 'today'
       it 'should work'
