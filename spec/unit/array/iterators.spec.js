@@ -43,6 +43,10 @@ describe 'Array'
     it 'should allow shorthand function syntax'
       1..4.detect('=== 3').should.eql 3
     end
+    
+    it 'should be aliased as #find()'
+      [].detect.should.equal [].find
+    end
   end
 
   describe '#each()'
@@ -102,22 +106,9 @@ describe 'Array'
     it 'should work with shorthand function syntax'
       1..10.filter('a % 2 === 0').should.eql [2,4,6,8,10]
     end
-  end
-
-  describe '#select()'
-    it 'should collect values when truthy'
-      var evens = 1..10.select(function(n){ return n % 2 === 0 })
-      evens.should.eql [2,4,6,8,10]
-    end
-
-    it 'should allow optional context'
-      var obj = { foo: function(){}}
-      obj.should.receive('foo', 'twice')
-      ;[1,2].select(function(){ return this.foo() }, obj)
-    end
-
-    it 'should work with shorthand function syntax'
-      1..10.select('a % 2 === 0').should.eql [2,4,6,8,10]
+    
+    it 'should be aliased as #select()'
+      [].filter.should.equal [].select
     end
   end
 
@@ -179,25 +170,9 @@ describe 'Array'
     it 'should work with shorthand function syntax'
       1..5.some('a == 4').should.be_true
     end
-  end
-
-  describe '#any()'
-    it 'should return true if any evaluate to true'
-      [4,6,4,1,2].any(function(n){ return n > 5 }).should.be_true
-    end
-
-    it 'should return false when none evaluate to true'
-      1..5.any(function(n){ return n > 5 }).should.be_false
-    end
-
-    it 'should allow optional context'
-      var obj = { foo: function(){}}
-      obj.should.receive('foo', 'twice')
-      ;[1,2].any(function(){ return this.foo() }, obj)
-    end
-
-    it 'should work with shorthand function syntax'
-      1..5.any('a == 4').should.be_true
+    
+    it 'should be aliased as #any()'
+      [].some.should.equal [].any
     end
   end
 

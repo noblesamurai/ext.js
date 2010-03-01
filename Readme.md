@@ -48,12 +48,12 @@ To use simply:
   * Array#drop(n)
   * Array#take(n)
   * Array#reduce(fn[, memo])
-  * Array#select(fn[, context])
   * Array#reject(fn[, context])
-  * Array#any(fn[, context])
+  * Array#filter(fn[, context]) aliased as select()
+  * Array#some(fn[, context]) aliased as any()
+  * Array#detect(fn[, context]) aliased as find()
   * Array#none(fn[, context])
   * Array#grep(pattern)
-  * Array#detect(fn[, context])
   * Array#remove(obj[, fn[, context]])
   * Array#isEmpty
 
