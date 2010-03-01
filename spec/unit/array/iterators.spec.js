@@ -150,23 +150,23 @@ describe 'Array'
     end
   end
 
-  describe '#any()'
+  describe '#some()'
     it 'should return true if any evaluate to true'
-      [4,6,4,1,2].any(function(n){ return n > 5 }).should.be_true
+      [4,6,4,1,2].some(function(n){ return n > 5 }).should.be_true
     end
 
     it 'should return false when none evaluate to true'
-      1..5.any(function(n){ return n > 5 }).should.be_false
+      1..5.some(function(n){ return n > 5 }).should.be_false
     end
 
     it 'should allow optional context'
       var obj = { foo: function(){}}
       obj.should.receive('foo', 'twice')
-      ;[1,2].any(function(){ return this.foo() }, obj)
+      ;[1,2].some(function(){ return this.foo() }, obj)
     end
 
     it 'should work with shorthand function syntax'
-      1..5.any('a == 4').should.be_true
+      1..5.some('a == 4').should.be_true
     end
   end
 
