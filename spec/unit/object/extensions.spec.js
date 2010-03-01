@@ -8,7 +8,7 @@ describe 'Object'
       b.should.have_property 'foo', 'bar'
     end
 
-    it 'should not depend on changes in the orignal object'
+    it 'should not reflect changes to the orignal object'
       var a = { foo: 'bar' }
       var b = a.clone
       a.foo = 'baz'
