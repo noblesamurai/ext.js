@@ -1,6 +1,6 @@
 
 describe 'Object'
-  describe '#map'
+  describe '#map()'
     it 'should map the object'
       { foo: 1 }.map(function (x) { return x + 1 }).foo.should.eql 2
     end
@@ -19,7 +19,7 @@ describe 'Object'
     end
   end
 
-  describe '#each'
+  describe '#each()'
     it 'should iterate the object'
       var obj = { foo: 1, bar: 1, baz: 1}, result = 0
       obj.each(function (x) { result += x })
@@ -41,7 +41,7 @@ describe 'Object'
     end
   end
 
-  describe '#filter'
+  describe '#filter()'
     it 'should filter the object'
       {foo: 'bar', foo2: 'baz'}.filter(function (x) { return x === 'bar' }).should.eql {foo: 'bar'}
     end
@@ -58,9 +58,13 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
+    
+    it 'should be aliased as #select()'
+      {}.select.should.equal {}.filter
+    end
   end
 
-  describe '#every'
+  describe '#every()'
     it 'should return true if every satisfies the provided testing function'
       { foo: 'bar', baz: 'bar' }.every(function (x) { return x === 'bar' }).should.be_true
     end
@@ -81,9 +85,13 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
+    
+    it 'should be aliased as #all()'
+      {}.every.should.equal {}.all
+    end
   end
 
-  describe '#some'
+  describe '#some()'
     it 'should return true if at least one property satisfies the provided testing function'
       { foo: 'bar', baz: 'baz' }.some(function (x) { return x === 'bar' }).should.be_true
     end
@@ -96,7 +104,7 @@ describe 'Object'
       var obj = { foo: 'bar' }
       {foo: 'bar', bar: 'baz'}.some(function (x) { return x === this.foo }, obj).should.be_true
     end
-
+    
     it 'should pass the arguments in the expected order'
       var obj = { foo: 'bar' }, args
       obj.some(function () { args = arguments })
@@ -104,9 +112,13 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
+    
+    it 'should be aliased as #any()'
+      {}.some.should.equal {}.any
+    end
   end
 
-  describe '#reject'
+  describe '#reject()'
     it 'should return an object containing only the properties the testing function returned false for'
       {foo: 'bar', baz: 'baz'}.reject(function (x) { return x === 'bar' }).should.eql {baz: 'baz'}
     end

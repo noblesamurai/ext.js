@@ -23,9 +23,9 @@ To use simply:
   * Object#merge(obj[, reverse])
   * Object#each(fn[, context])
   * Object#map(fn[, context])
-  * Object#filter(fn[, context])
-  * Object#every(fn[, context])
-  * Object#some(fn[, context])
+  * Object#filter(fn[, context]) aliased as select()
+  * Object#every(fn[, context]) aliased as all()
+  * Object#some(fn[, context]) aliased as any()
   * Object#reject(fn[, context])
   * Object#respondsTo(key)
 
