@@ -79,7 +79,7 @@ describe 'Array'
     end
 
     it 'should work with shorthand function syntax'
-      1..5.reduce(0, 'a + b').should.eql 15
+      1..5.reduce('a + b').should.eql 15
     end
     
     it 'should shift the first value when no memo is provided'
