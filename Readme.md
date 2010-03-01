@@ -128,6 +128,10 @@ To use simply:
 ### RegExp
 
   * RegExp.escape(str[, chars])
+  
+### Function
+  
+  * Function#bind(context)
 
 ### Base64
 

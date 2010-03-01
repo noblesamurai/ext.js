@@ -13,6 +13,7 @@ else
     .exec('spec/unit/printf.spec.js')
     .exec('spec/unit/md5.spec.js')
     .exec('spec/unit/regexp.spec.js')
+    .exec('spec/unit/function.spec.js')
     .exec('spec/unit/array/iterators.spec.js')
     .exec('spec/unit/array/extensions.spec.js')
     .exec('spec/unit/array/collections.spec.js')
