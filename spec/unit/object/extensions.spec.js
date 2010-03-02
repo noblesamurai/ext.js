@@ -1,5 +1,27 @@
 
 describe 'Object'
+  describe '#alias()'
+    it 'should copy a property'
+      Object.prototype.foo = 'yay'
+      {}.foo.should.eql 'yay'
+      Object.prototype.alias('foo', 'bar')
+      {}.bar.should.eql 'yay'
+      {}.bar.should.equal {}.foo
+    end
+    
+    it 'should be chainable'
+      Object.prototype.a = 'yay'
+      {}.a.should.eql 'yay'
+      Object.prototype
+        .alias('a', 'b')
+        .alias('a', 'c')
+        .alias('a', 'd')
+      {}.b.should.eql 'yay'
+      {}.c.should.eql 'yay'
+      {}.d.should.eql 'yay'
+    end
+  end
+  
   describe '#keys'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']

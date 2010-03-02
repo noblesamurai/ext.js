@@ -18,6 +18,7 @@ To use simply:
 
   * Object#keys
   * Object#values
+  * Object#alias(orig, alias)
   * Object#tap(fn[, context])
   * Object#reduce(fn[, memo])
   * Object#merge(obj[, reverse])
