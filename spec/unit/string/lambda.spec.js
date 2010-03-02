@@ -50,4 +50,11 @@ describe 'String'
       'x -> x + this.incr'.call(obj, 2).should.eql 5
     end
   end
+
+  describe '#apply()'
+    it 'should execute the function in the given context with the given array of arguments'
+      var obj = { incr: 3 }
+      'x -> x + this.incr'.apply(obj, [2]).should.eql 5
+    end
+  end
 end
