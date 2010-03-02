@@ -1,5 +1,5 @@
 
-parse = require('ext/date').parse
+parse = require('ext/core_ext/date').parse
 
 describe 'date'
   describe '#parse()'
