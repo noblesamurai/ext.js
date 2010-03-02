@@ -17,7 +17,7 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-    
+
     it 'should support short-hand function syntax'
       { foo: 1 }.map('a + 1').foo.should.eql 2
     end
@@ -62,11 +62,11 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-    
+
     it 'should be aliased as #select()'
       {}.select.should.equal {}.filter
     end
-    
+
     it 'should support short-hand function syntax'
       { foo: 'bar' }.filter('.length > 3').should.eql {}
     end
@@ -93,11 +93,11 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-    
+
     it 'should be aliased as #all()'
       {}.every.should.equal {}.all
     end
-    
+
     it 'should support short-hand function syntax'
       { foo: 'bar' }.every('=== "bar"').should.be_true
     end
@@ -116,7 +116,7 @@ describe 'Object'
       var obj = { foo: 'bar' }
       {foo: 'bar', bar: 'baz'}.some(function (x) { return x === this.foo }, obj).should.be_true
     end
-    
+
     it 'should pass the arguments in the expected order'
       var obj = { foo: 'bar' }, args
       obj.some(function () { args = arguments })
@@ -124,13 +124,32 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-    
+
     it 'should be aliased as #any()'
       {}.some.should.equal {}.any
     end
-    
+
     it 'should support short-hand function syntax'
       { foo: 'bar' }.some('=== "bar"').should.be_true
+    end
+  end
+
+  describe '#none()'
+    it 'should return true if none evaluate to true'
+      {a: 1, b:2, c: 3}.none(function(n){ return n > 5 }).should.be_true
+    end
+
+    it 'should return false when any evaluate to true'
+      {a: 1, b:2, c: 10}.none(function(n){ return n > 5 }).should.be_false
+    end
+
+    it 'should allow optional context'
+      var obj = { foo: 5 }
+      { a: 1, b:2, c: 10 }.none(function(n){ return n > this.foo }, obj).should.be_false
+    end
+
+    it 'should work with shorthand function syntax'
+      { a: 1, b:2, c: 10 }.none('a > 5').should.be_false
     end
   end
 
@@ -151,27 +170,55 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-    
+
     it 'should support short-hand function syntax'
       { foo: 'bar' }.reject('=== "bar"').should.eql {}
     end
   end
-  
+
+  describe '#detect()'
+    it 'should return the first element the given function returns true for'
+      {a: 1, b: 2, c: 3}.detect(function (e) { return e === 3 }).should.eql 3
+    end
+
+    it 'should return undefined if the given function never returns true'
+      {a: 1, b: 2, c: 3}.detect(function(){}).should.be_undefined
+    end
+
+    it 'should accept optional context'
+      var obj = { foo: function(){ return true }}
+      obj.should.receive('foo', 'once')
+      {a: 1, b: 2, c: 3}.detect(function(){ return this.foo() }, obj).should.eql 1
+    end
+
+    it 'should allow shorthand function syntax'
+      {a: 1, b: 2, c: 3}.detect('=== 3').should.eql 3
+    end
+
+    it 'should be aliased as #find()'
+      {}.detect.should.equal {}.find
+    end
+  end
+
   describe '#reduce()'
     it 'should iterate with memo object'
-      var evens = { foo: 1, bar: 2, baz: 3 }.reduce(function(evens, n){
+      var evens = {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10}.reduce(function(evens, n){
         if (n % 2 === 0) evens.push(n)
         return evens
       }, [])
-      evens.should.eql [2]
+      evens.should.eql [2,4,6,8,10]
     end
 
     it 'should work with shorthand function syntax'
-      { a: 1, b: 2, c: 3 }.reduce('a + b', 0).should.eql 6
+      {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce('a + b', 0).should.eql 15
     end
-    
-    it 'should shift the first value when no memo is provided'
-      { a: 1, b: 2, c: 3 }.reduce(function(a, b){ return a + b }).should.eql 6
+
+    it 'should default to zero if it is a non-indexed object'
+      {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce(function(a, b){ return a + b }, 0).should.eql 15
+    end
+
+    it 'should be aliased as #inject()'
+      {}.reduce.should.equal {}.inject
     end
   end
 end

@@ -8,19 +8,35 @@ describe 'Array'
 
     describe 'when given a property name is given'
       it 'should access the property on the first argument'
-        ['foo', 'bar'].map('length').should.eql [3,3]
+        ['foo', 'bar'].map('.length').should.eql [3,3]
       end
     end
 
     describe 'when given a method name'
       it 'should call the method on the first argument'
-        [1,2].map('toString()').should.eql ['1', '2']
+        [1,2].map('.toString()').should.eql ['1', '2']
       end
     end
 
     describe 'when given large strings'
       it 'should be a return expression'
         [1,2,6].map('a > 5 ? true : false').should.eql [false, false, true]
+      end
+    end
+
+    describe 'when given a full lambda term'
+      it 'should evaluate'
+        1..3.map('a -> a + 1').should.eql [2,3,4]
+      end
+
+      it 'should support currying'
+        var curried = 1..3.map('a -> b -> a + b')
+        curried.each(function (item) {
+          item.should.be_an_instance_of Function
+        })
+        curried[0](40).should.eql 41
+        curried[1](40).should.eql 42
+        curried[2](40).should.eql 43
       end
     end
   end
@@ -43,7 +59,7 @@ describe 'Array'
     it 'should allow shorthand function syntax'
       1..4.detect('=== 3').should.eql 3
     end
-    
+
     it 'should be aliased as #find()'
       [].detect.should.equal [].find
     end
@@ -85,9 +101,13 @@ describe 'Array'
     it 'should work with shorthand function syntax'
       1..5.reduce('a + b').should.eql 15
     end
-    
+
     it 'should shift the first value when no memo is provided'
       1..5.reduce(function(a, b){ return a + b }).should.eql 15
+    end
+
+    it 'should be aliased as #inject()'
+      [].reduce.should.equal [].inject
     end
   end
 
@@ -106,7 +126,7 @@ describe 'Array'
     it 'should work with shorthand function syntax'
       1..10.filter('a % 2 === 0').should.eql [2,4,6,8,10]
     end
-    
+
     it 'should be aliased as #select()'
       [].filter.should.equal [].select
     end
@@ -140,7 +160,7 @@ describe 'Array'
     end
 
     it 'should work with shorthand function syntax'
-      ['foo', 'bar'].map('length').should.eql [3,3]
+      ['foo', 'bar'].map('.length').should.eql [3,3]
     end
 
     it 'should be ECMAScript compliant'
@@ -170,7 +190,7 @@ describe 'Array'
     it 'should work with shorthand function syntax'
       1..5.some('a == 4').should.be_true
     end
-    
+
     it 'should be aliased as #any()'
       [].some.should.equal [].any
     end
