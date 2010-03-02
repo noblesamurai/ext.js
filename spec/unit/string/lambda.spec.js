@@ -31,8 +31,19 @@ describe 'String'
     it 'should support shortform operators'
       '+ 2'.lambda(1).should.eql  3
       '+'.lambda(1, 2).should.eql 3
+      '6 /'.lambda(2).should.eql 3
       '.length'.lambda(1..10).should.eql 10
       '[1]'.lambda([13, 42]).should.eql 42
+      '> 2'.lambda(3).should.be_true
+      '--'.lambda(2).should.eql 1
+      '!='.lambda(2, 3).should.be_true
+      '!=='.lambda(2, 3).should.be_true
+      '!!'.lambda(1).should.be_type 'boolean'
+      '~~'.lambda(2.2).should.eql 2
+      '||'.lambda(0, 1).should.eql 1
+      '&'.lambda(0x13, 0x12).should.eql 18
+      '^'.lambda(0x13, 0x12).should.eql 1
+      '<<'.lambda(1, 2).should.eql 4
     end
 
     it 'should support shortform operators in Haskell-style parentheses'
