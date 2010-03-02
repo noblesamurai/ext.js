@@ -47,10 +47,6 @@ describe 'String'
       '.toString()'.lambda({ toString: function () { return 'ok' } }).should.eql 'ok'
     end
 
-    it 'should support shortform operators in Haskell-style parentheses'
-      '(+)'.lambda(1, 2).should.eql 3
-    end
-
     it 'should throw meaningful errors'
       -{ ';'.lambda }.should.throw_error SyntaxError, 'Invalid lambda expression: `;` (Unexpected token ;)'
     end
