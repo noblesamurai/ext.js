@@ -43,4 +43,11 @@ describe 'String'
       -{ ';'.lambda }.should.throw_error SyntaxError, 'Invalid lambda expression: `;` (Unexpected token ;)'
     end
   end
+
+  describe '#call()'
+    it 'should execute the function in the given context with the given arguments'
+      var obj = { incr: 3 }
+      'x -> x + this.incr'.call(obj, 2).should.eql 5
+    end
+  end
 end
