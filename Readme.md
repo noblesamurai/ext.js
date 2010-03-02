@@ -42,7 +42,7 @@ To use simply:
   * Array#transposed
   * Array#isEmpty
 
-#### Array collection operators
+#### Collection Operators
 
   * Array#sum
   * Array#avg
