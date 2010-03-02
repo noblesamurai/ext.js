@@ -308,6 +308,26 @@ Hash whitespace:
     }
     // good
     
+Chained methods should be indented to indicate context:
+
+    str
+      .strip
+      .replace(...)
+      .replace(...)
+    // good
+    
+    str
+    .strip
+    .replace(...)
+    .replace(...)
+    // bad
+    
+    str.
+      strip.
+      replace(...).
+      replace(...)
+    // bad
+    
 Use single quoted strings when possible:
 
     'yay'
