@@ -294,6 +294,20 @@ No trailing whitespace after hash keys:
     { foo : 'bar' }
     // bad
     
+Hash whitespace:
+
+    { foo: 'bar', baz: 'raz' }
+    // good
+    
+    {foo:'bar', baz: 'raz'}
+    // bad
+    
+    {
+      foo: 'bar',
+      baz: 'raz'
+    }
+    // good
+    
 Use single quoted strings when possible:
 
     'yay'
