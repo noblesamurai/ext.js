@@ -43,6 +43,11 @@ describe 'Object'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
+    
+    it 'should return itself'
+      var obj = { foo: 'bar' }
+      obj.each(function(){}).should.equal obj
+    end
   end
 
   describe '#filter()'
