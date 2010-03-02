@@ -52,12 +52,12 @@ describe 'Object'
 
   describe '#filter()'
     it 'should filter the object'
-      {foo: 'bar', foo2: 'baz'}.filter(function (x) { return x === 'bar' }).should.eql {foo: 'bar'}
+      { foo: 'bar', foo2: 'baz' }.filter(function (x) { return x === 'bar' }).should.eql { foo: 'bar' }
     end
 
     it 'should support a given context'
       var obj = { foo: 'bar' }
-      {foo: 'bar', foo2: 'baz'}.filter(function (x) { return x === this.foo }, obj).should.eql {foo: 'bar'}
+       {foo: 'bar', foo2: 'baz' }.filter(function (x) { return x === this.foo }, obj).should.eql { foo: 'bar' }
     end
 
     it 'should pass the arguments in the expected order'
