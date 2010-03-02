@@ -7,8 +7,10 @@ describe 'Object'
       Object.prototype.alias('foo', 'bar')
       {}.bar.should.eql 'yay'
       {}.bar.should.equal {}.foo
+      delete Object.prototype.foo
+      delete Object.prototype.bar
     end
-    
+
     it 'should be chainable'
       Object.prototype.a = 'yay'
       {}.a.should.eql 'yay'
@@ -19,9 +21,13 @@ describe 'Object'
       {}.b.should.eql 'yay'
       {}.c.should.eql 'yay'
       {}.d.should.eql 'yay'
+      delete Object.prototype.a
+      delete Object.prototype.b
+      delete Object.prototype.c
+      delete Object.prototype.d
     end
   end
-  
+
   describe '#keys'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']
@@ -68,7 +74,7 @@ describe 'Object'
     it 'should return true if the object responds to the given key'
       { f: function () {} }.respondsTo('f').should.be_true
     end
-    
+
     it 'should return true when the object inherits a function'
       ''.respondsTo('toString').should.be_true
     end
