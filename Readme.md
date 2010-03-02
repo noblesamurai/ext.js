@@ -54,6 +54,7 @@ To use simply:
   * Array#none(fn[, context])
   * Array#grep(pattern)
   * Array#remove(obj[, fn[, context]])
+  * Array#transposed
   * Array#isEmpty
 
 ### Number
