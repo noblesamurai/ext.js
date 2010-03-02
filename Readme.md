@@ -331,6 +331,30 @@ Conditionals should be functional when possible (I hate braces):
       }
     }
     // bad
+    
+Closures:
+
+    function(){
+      
+    }
+    // good
+    
+    function () {
+      
+    }
+    // bad
+    
+Methods:
+
+    foo.bar = function() {
+      
+    }
+    // good
+    
+    foo.bar = function (){
+      
+    }
+    // bad 
   
 
 ## License
