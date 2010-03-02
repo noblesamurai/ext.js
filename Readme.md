@@ -127,9 +127,9 @@ To use simply:
 ### RegExp
 
   * RegExp.escape(str[, chars])
-  
+
 ### Function
-  
+
   * Function#bind(context)
 
 ### Base64
@@ -153,9 +153,23 @@ To use simply:
 
 ## Iterator Functions
 
-Ext.js allows most iterators to use _"function shorthand syntax"_,
-which allows you to define a function by passing a string,
-as shown in some of the examples below.
+Ext.js allows most iterators to use _"string lambda expressions"_,
+which allows you to define a function by passing a string containing,
+a valid Lambda expression or shortform as shown in some of the examples
+below.
+
+### Full Lambda Expressions
+
+    [1,2,3].map('a -> a + 1')
+    // => [2,3,4]
+
+### Full Lambda Expressions With Currying
+
+    curried = [1,2,3].map('a -> b -> a + b')
+    // => [(Function), (Function), (Function)]
+
+    curried[1](40)
+    // => 42
 
 ### Literals
 
@@ -164,8 +178,11 @@ as shown in some of the examples below.
 
 ### Properties
 
-    ['hello', 'there'].map('length')
+    ['hello', 'there'].map('.length')
     // => [5,5]
+
+    [['hello'], ['there']].map('[0]')
+    // => ['hello', 'there']
 
 ### Methods
 
@@ -176,7 +193,7 @@ as shown in some of the examples below.
 
     [1,2,3,4,5].select('> 3')
     // => [4,5]
-    
+
 ### Object Usage
 
     { foo: 'bar', baz: 'something' }.select(".length > 3")
