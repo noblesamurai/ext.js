@@ -46,6 +46,10 @@ describe 'String'
       '<<'.lambda(1, 2).should.eql 4
     end
 
+    it 'should support shortform method invocations'
+      'toString()'.lambda({ toString: function () { return 'ok' } }).should.eql 'ok'
+    end
+
     it 'should support shortform operators in Haskell-style parentheses'
       '(+)'.lambda(1, 2).should.eql 3
     end
