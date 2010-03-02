@@ -227,6 +227,91 @@ More examples:
 
   * TJ Holowaychuk (visionmedia)
   * Tobias Svensson (tobiassvn)
+  
+### Style Guide
+
+These guidlines must be met before commit(s) or patches 
+will be accepted.
+
+  * Use 2 space indents
+  * No trailing whitespace
+  * Blank line before EOF
+  * Omit semi-colons unless required (very rarely is this needed)
+  * Never bump the version
+  
+File comments should take the following form:
+
+    // ext.js - <category> [- subcategory ...] - Copyright TJ Holowaychuk <tj@vision-media.ca> (MIT Licensed)
+
+Method comments should take the following form, and
+<type>'s should be lowercase. _"mixed"_ should be used
+when multiple types are acceptable, **not** _"object"_.
+
+When accepting an _options_ object for example, you
+may use _"hash"_ as this indicates that common usage
+of this parameter is to pass a literal object using
+brace syntax.
+
+All examples should be indented 2 spaces.
+
+    /**
+     * <description>
+     *
+     *  <example ...>
+     *
+     * @param  {<type>} <name>
+     * @param  {<type>} <name>
+     * @param  {<type>} <name>
+     * @return {<type>}
+     * @api <public|private|protected>
+     */
+
+No trailing whitespace after hash keys:
+
+    { foo: 'bar' }
+    // good
+    
+    { foo : 'bar' }
+    // bad
+    
+Use single quoted strings when possible:
+
+    'yay'
+    // good
+    
+    "he said 'yay'"
+    // good
+    
+    "yay"
+    // bad
+
+Large ternary conditional should take the following form:
+
+    foo = some.largeProperty === undefined
+      ? 'some large value'
+      : some.largeProperty + 'whatever'
+    
+Conditionals should be functional when possible (I hate braces):
+
+    if (foo)
+      bar(),
+      baz()
+    else
+      if (somethingElse)
+        whateves()
+    // goood
+    
+    if (foo) {
+      bar()
+      baz()
+    }
+    else {
+      if (somethingElse) {
+        whateves()
+      }
+    }
+    // bad
+  
 
 ## License
 
