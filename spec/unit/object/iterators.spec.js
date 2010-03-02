@@ -156,5 +156,23 @@ describe 'Object'
       { foo: 'bar' }.reject('=== "bar"').should.eql {}
     end
   end
+  
+  describe '#reduce()'
+    it 'should iterate with memo object'
+      var evens = { foo: 1, bar: 2, baz: 3 }.reduce(function(evens, n){
+        if (n % 2 === 0) evens.push(n)
+        return evens
+      }, [])
+      evens.should.eql [2]
+    end
+
+    it 'should work with shorthand function syntax'
+      { a: 1, b: 2, c: 3 }.reduce('a + b', 0).should.eql 6
+    end
+    
+    it 'should shift the first value when no memo is provided'
+      { a: 1, b: 2, c: 3 }.reduce(function(a, b){ return a + b }).should.eql 6
+    end
+  end
 end
 
