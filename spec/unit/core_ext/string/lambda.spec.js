@@ -19,9 +19,13 @@ describe 'String'
       'x -> y -> x + 2 * y'.lambda(1)(2).should.eql 5
     end
 
-    it 'should support partials containing multiple arguments'
+    it 'should support nested lambdas containing multiple arguments'
       'x -> y z -> x + y + z'.lambda(1)(2, 3).should.eql 6
       'x y -> z -> x + y + z'.lambda(1, 2)(3).should.eql 6
+    end
+    
+    it 'should support nested lambdas with no arguments'
+      'a b -> -> a + b'.lambda(1,2)().should.eql 3
     end
 
     it 'should support shortform operators'
