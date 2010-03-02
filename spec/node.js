@@ -21,6 +21,7 @@ else
     .exec('spec/unit/core_ext/date/extensions.spec.js')
     .exec('spec/unit/core_ext/object/enumerable.spec.js')
     .exec('spec/unit/core_ext/object/extensions.spec.js')
+    .exec('spec/unit/core_ext/object/include.spec.js')
     .exec('spec/unit/core_ext/string/extensions.spec.js')
     .exec('spec/unit/core_ext/string/inflections.spec.js')
     .exec('spec/unit/core_ext/string/lambda.spec.js')
