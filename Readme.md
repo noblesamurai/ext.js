@@ -236,6 +236,8 @@ will be accepted.
   * Use 2 space indents
   * No trailing whitespace
   * Blank line before EOF
+  * Omit semi-colons unless required (very rarely is this needed)
+  * Never bump the version
   
 File comments should take the following form:
 
