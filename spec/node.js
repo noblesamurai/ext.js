@@ -23,6 +23,7 @@ else
     .exec('spec/unit/object/extensions.spec.js')
     .exec('spec/unit/string/extensions.spec.js')
     .exec('spec/unit/string/inflections.spec.js')
+    .exec('spec/unit/string/lambda.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
 
