@@ -12,7 +12,7 @@ describe 'Object'
     end
   end
 
-  describe '#tap'
+  describe '#tap()'
     it 'should allow to tap into function call chains'
       var result
       'user_names'.camelcase.tap(function (x) { result = x }).singular.should.eql 'UserName'
@@ -26,7 +26,7 @@ describe 'Object'
     end
   end
 
-  describe '#merge'
+  describe '#merge()'
     it 'should merge the given object and return _this_'
       var source = { foo: 'bar' }
       var target = {}
@@ -42,7 +42,7 @@ describe 'Object'
     end
   end
 
-  describe '#respondsTo'
+  describe '#respondsTo()'
     it 'should return true if the object responds to the given key'
       { f: function () {} }.respondsTo('f').should.be_true
     end
