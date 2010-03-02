@@ -134,6 +134,25 @@ describe 'Object'
     end
   end
 
+  describe '#none()'
+    it 'should return true if none evaluate to true'
+      {a: 1, b:2, c: 3}.none(function(n){ return n > 5 }).should.be_true
+    end
+
+    it 'should return false when any evaluate to true'
+      {a: 1, b:2, c: 10}.none(function(n){ return n > 5 }).should.be_false
+    end
+
+    it 'should allow optional context'
+      var obj = { foo: 5 }
+      { a: 1, b:2, c: 10 }.none(function(n){ return n > this.foo }, obj).should.be_false
+    end
+
+    it 'should work with shorthand function syntax'
+      { a: 1, b:2, c: 10 }.none('a > 5').should.be_false
+    end
+  end
+
   describe '#reject()'
     it 'should return an object containing only the properties the testing function returned false for'
       {foo: 'bar', baz: 'baz'}.reject(function (x) { return x === 'bar' }).should.eql {baz: 'baz'}
@@ -154,6 +173,48 @@ describe 'Object'
 
     it 'should support short-hand function syntax'
       { foo: 'bar' }.reject('=== "bar"').should.eql {}
+    end
+  end
+
+  describe '#detect()'
+    it 'should return the first element the given function returns true for'
+      {a: 1, b: 2, c: 3}.detect(function (e) { return e === 3 }).should.eql 3
+    end
+
+    it 'should return undefined if the given function never returns true'
+      {a: 1, b: 2, c: 3}.detect(function(){}).should.be_undefined
+    end
+
+    it 'should accept optional context'
+      var obj = { foo: function(){ return true }}
+      obj.should.receive('foo', 'once')
+      {a: 1, b: 2, c: 3}.detect(function(){ return this.foo() }, obj).should.eql 1
+    end
+
+    it 'should allow shorthand function syntax'
+      {a: 1, b: 2, c: 3}.detect('=== 3').should.eql 3
+    end
+
+    it 'should be aliased as #find()'
+      {}.detect.should.equal {}.find
+    end
+  end
+
+  describe '#reduce()'
+    it 'should iterate with memo object'
+      var evens = {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10}.reduce(function(evens, n){
+        if (n % 2 === 0) evens.push(n)
+        return evens
+      }, [])
+      evens.should.eql [2,4,6,8,10]
+    end
+
+    it 'should work with shorthand function syntax'
+      {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce('a + b', 0).should.eql 15
+    end
+
+    it 'should default to zero if it is a non-indexed object'
+      {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce(function(a, b){ return a + b }, 0).should.eql 15
     end
   end
 end
