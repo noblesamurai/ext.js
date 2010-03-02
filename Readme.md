@@ -186,7 +186,7 @@ below.
 
 ### Methods
 
-    [1,2,3].map('toString()')
+    [1,2,3].map('.toString()')
     // => ['1','2','3']
 
 ### Binary Operators

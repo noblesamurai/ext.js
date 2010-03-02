@@ -14,7 +14,7 @@ describe 'Array'
 
     describe 'when given a method name'
       it 'should call the method on the first argument'
-        [1,2].map('toString()').should.eql ['1', '2']
+        [1,2].map('.toString()').should.eql ['1', '2']
       end
     end
 
