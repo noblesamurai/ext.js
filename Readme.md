@@ -23,11 +23,6 @@ To use simply:
   * Object#reduce(fn[, memo])
   * Object#merge(obj[, reverse])
   * Object#each(fn[, context])
-  * Object#map(fn[, context])
-  * Object#filter(fn[, context]) aliased as select()
-  * Object#every(fn[, context]) aliased as all()
-  * Object#some(fn[, context]) aliased as any()
-  * Object#reject(fn[, context])
   * Object#respondsTo(key)
 
 ### Array
@@ -39,24 +34,33 @@ To use simply:
   * Array#flatten
   * Array#first
   * Array#last
-  * Array#sum
-  * Array#avg
-  * Array#min
-  * Array#max
   * Array#sample
   * Array#compact([removableValues])
   * Array#at(index)
   * Array#drop(n)
   * Array#take(n)
-  * Array#reduce(fn[, memo])
-  * Array#reject(fn[, context])
-  * Array#filter(fn[, context]) aliased as select()
-  * Array#some(fn[, context]) aliased as any()
-  * Array#detect(fn[, context]) aliased as find()
-  * Array#none(fn[, context])
   * Array#grep(pattern)
   * Array#remove(obj[, fn[, context]])
+  * Array#transposed
   * Array#isEmpty
+
+#### Collection Operators
+
+  * Array#sum
+  * Array#avg
+  * Array#min
+  * Array#max
+
+### Enumerable (included by Object and Array)
+
+  * Enumerable#map(fn[, context])
+  * Enumerable#reduce(fn[, memo]) aliased as inject()
+  * Enumerable#filter(fn[, context]) aliased as select()
+  * Enumerable#detect(fn[, context]) aliased as find()
+  * Enumerable#some(fn[, context]) aliased as any()
+  * Enumerable#every(fn[, context]) aliased as all()
+  * Enumerable#none(fn[, context])
+  * Enumerable#reject(fn[, context])
 
 ### Number
 
@@ -103,7 +107,6 @@ To use simply:
   * String#isPlural
   * String#isSingular
   * String#includes(str)
-  * String#gsub(pattern, replacement[, scope])
   * String#count(str)
 
 ### Date
@@ -129,9 +132,9 @@ To use simply:
 ### RegExp
 
   * RegExp.escape(str[, chars])
-  
+
 ### Function
-  
+
   * Function#bind(context)
 
 ### Base64
@@ -155,9 +158,23 @@ To use simply:
 
 ## Iterator Functions
 
-Ext.js allows most iterators to use _"function shorthand syntax"_,
-which allows you to define a function by passing a string,
-as shown in some of the examples below.
+Ext.js allows most iterators to use _"string lambda expressions"_,
+which allows you to define a function by passing a string containing,
+a valid Lambda expression or shortform as shown in some of the examples
+below.
+
+### Full Lambda Expressions
+
+    [1,2,3].map('a -> a + 1')
+    // => [2,3,4]
+
+### Full Lambda Expressions With Currying
+
+    curried = [1,2,3].map('a -> b -> a + b')
+    // => [(Function), (Function), (Function)]
+
+    curried[1](40)
+    // => 42
 
 ### Literals
 
@@ -166,19 +183,22 @@ as shown in some of the examples below.
 
 ### Properties
 
-    ['hello', 'there'].map('length')
+    ['hello', 'there'].map('.length')
     // => [5,5]
+
+    [['hello'], ['there']].map('[0]')
+    // => ['hello', 'there']
 
 ### Methods
 
-    [1,2,3].map('toString()')
+    [1,2,3].map('.toString()')
     // => ['1','2','3']
 
 ### Binary Operators
 
     [1,2,3,4,5].select('> 3')
     // => [4,5]
-    
+
 ### Object Usage
 
     { foo: 'bar', baz: 'something' }.select(".length > 3")
