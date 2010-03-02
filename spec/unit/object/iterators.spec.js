@@ -216,6 +216,10 @@ describe 'Object'
     it 'should default to zero if it is a non-indexed object'
       {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce(function(a, b){ return a + b }, 0).should.eql 15
     end
+
+    it 'should be aliased as #inject()'
+      {}.reduce.should.equal {}.inject
+    end
   end
 end
 

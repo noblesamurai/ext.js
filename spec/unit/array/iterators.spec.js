@@ -105,6 +105,10 @@ describe 'Array'
     it 'should shift the first value when no memo is provided'
       1..5.reduce(function(a, b){ return a + b }).should.eql 15
     end
+
+    it 'should be aliased as #inject()'
+      [].reduce.should.equal [].inject
+    end
   end
 
   describe '#filter()'
