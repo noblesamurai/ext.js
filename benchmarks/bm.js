@@ -8,11 +8,11 @@ var path = process.argv[2],
 
 delete benchmarks.n
 
-printf('\n  benchmarking %s %d time(s)\n\n', path, times)
+printf('\n      benchmarking %s %d time(s)\n\n', path, times)
 
 benchmarks.each(function(fn, label){
   var start = +new Date
   fn()
   var duration = (+new Date - start) / 1000
-  printf('%25s : %0.3f\n', label, duration)
+  printf('%45s : %0.3f\n', label, duration)
 })
