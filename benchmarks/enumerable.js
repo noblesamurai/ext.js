@@ -22,3 +22,20 @@ exports['array#each()'] = function(){
 exports['array#remove()'] = function(){
   array.remove(5)
 }
+
+exports['array#select()'] = function(){
+  array.select(function(n){ return n < 100 })
+}
+
+exports['array#reject()'] = function(){
+  array.reject(function(n){ return n < 100 })
+}
+
+exports['array#find()'] = function(){
+  array.find(function(n){ return n > 10000 })
+}
+
+exports['array#all()'] = function(){
+  array.all(function(n){ return n > 10000 })
+}
+
