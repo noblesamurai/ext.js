@@ -1,6 +1,8 @@
 
 var n = 400000,
     array = []
+    
+exports.n = n
 
 while (n--)
   array.push(n)
