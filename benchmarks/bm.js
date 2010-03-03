@@ -6,7 +6,7 @@ var path = process.argv[2],
     benchmarks = require(__dirname + '/' + path)
 
 
-printf('\n  benchmarking %s\n', path)
+printf('\n  benchmarking %s\n\n', path)
 
 benchmarks.each(function(fn, label){
   var start = +new Date
