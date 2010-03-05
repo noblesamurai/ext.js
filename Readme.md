@@ -9,6 +9,13 @@ Ext.js uses the CommonJS module pattern when needed.
 Additionally, **all** of the native object extensions are non-enumerable,
 and you may create your own via Ext.extend(prototype, methods).
 
+## Installation
+
+  Install the [Kiwi package manager for nodejs](http://github.com/visionmedia/kiwi)
+  and run:
+  
+      $ kiwi install ext
+
 ## Extensions
 
 To use simply:
