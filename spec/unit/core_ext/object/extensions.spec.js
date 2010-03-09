@@ -27,7 +27,21 @@ describe 'Object'
       delete Object.prototype.d
     end
   end
-
+  
+  describe '#join()'
+    describe 'without an argument'
+      it 'should join with commas'
+        { foo: 'bar', baz: 'rawr' }.join().should.eql 'bar,rawr' 
+      end
+    end
+    
+    describe 'with an argument'
+      it 'should join with the given string'
+        { foo: 'bar', baz: 'rawr' }.join(' ').should.eql 'bar rawr'
+      end
+    end
+  end
+  
   describe '#keys'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']

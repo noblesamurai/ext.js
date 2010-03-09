@@ -226,5 +226,6 @@ describe 'Object'
       {}.reduce.should.equal {}.inject
     end
   end
+
 end
 
