@@ -1,4 +1,4 @@
 ---
   name: ext
-  description: High quality / performance extensions. Extending date parsing, Array / Object iterators, date formatting and more
+  description: High quality extensions, date formatting, iterators and more
   version: 0.1.0
