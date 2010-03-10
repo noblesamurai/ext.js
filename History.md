@@ -1,4 +1,11 @@
 
+0.2.1 / 2010-03-10
+==================
+
+  * Added Object#join([str])
+  * Fixed reduce() bug in which Object#reduce() was previously skipping
+    the first value when a memo object was passed.
+
 0.2.0 / 2010-03-04
 ==================
 
