@@ -217,9 +217,13 @@ describe 'Object'
     it 'should work with shorthand function syntax'
       {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce('a + b', 0).should.eql 15
     end
-
-    it 'should default to zero if it is a non-indexed object'
-      {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce(function(a, b){ return a + b }, 0).should.eql 15
+    
+    it 'should pass the first value when no memo is supplied'
+      ['foo', 'bar', 'baz'].reduce(function(a, b){ return a + ' ' + b }).should.eql 'foo bar baz'
+    end
+    
+    it 'should start from the correct value when a memo object is given'
+      ['foo', 'bar', 'baz'].reduce(function(a, b){ return a + ' ' + b }, 'start:').should.eql 'start: foo bar baz'
     end
 
     it 'should be aliased as #inject()'
