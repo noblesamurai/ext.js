@@ -220,7 +220,7 @@ describe 'Object'
     
     it 'should pass the first value when no memo is supplied'
       ['foo', 'bar', 'baz'].reduce(function(a, b){ return a + ' ' + b }).should.eql 'foo bar baz'
-      { a: 'foo', b: 'bar', c: 'bar' }.reduce(function(a, b){ return a + ' ' + b }).should.eql 'foo bar baz'
+      { a: 'foo', b: 'bar', c: 'baz' }.reduce(function(a, b){ return a + ' ' + b }).should.eql 'foo bar baz'
     end
     
     it 'should start from the correct value when a memo object is given'
