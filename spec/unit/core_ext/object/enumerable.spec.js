@@ -220,10 +220,12 @@ describe 'Object'
     
     it 'should pass the first value when no memo is supplied'
       ['foo', 'bar', 'baz'].reduce(function(a, b){ return a + ' ' + b }).should.eql 'foo bar baz'
+      { a: 'foo', b: 'bar', c: 'bar' }.reduce(function(a, b){ return a + ' ' + b }).should.eql 'foo bar baz'
     end
     
     it 'should start from the correct value when a memo object is given'
       ['foo', 'bar', 'baz'].reduce(function(a, b){ return a + ' ' + b }, 'start:').should.eql 'start: foo bar baz'
+      { foo: 'bar', baz: 'raz' }.reduce(function(a, b){ return a + ' ' + b }, 'start:').should.eql 'start: bar raz'
     end
 
     it 'should be aliased as #inject()'
