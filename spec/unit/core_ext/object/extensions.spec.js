@@ -46,6 +46,10 @@ describe 'Object'
     it 'should return own property keys'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']
     end
+    
+    it 'should be allow being written to'
+      { keys: 'test' }.keys.should.eql 'test'
+    end
   end
 
   describe '#values'
