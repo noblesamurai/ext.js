@@ -1,4 +1,9 @@
 
+0.2.2 / 2010-03-11
+==================
+
+  * Fixed Object#keys= allowing custom values to take precedence over Object#keys
+
 0.2.1 / 2010-03-10
 ==================
 
