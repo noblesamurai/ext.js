@@ -1,13 +1,13 @@
 
 describe 'Enumerable'
   describe '#map()'
-    it 'should map the object'
-      { foo: 1 }.map(function(x){ return x + 1 }).foo.should.eql 2
+    it 'should map an object'
+      { foo: 1, bar: 2 }.map(function(x){ return x + 1 }).should.eql [2, 3]
     end
 
     it 'should support a given context'
       var obj = { foo: 41 }
-      { foo: 1 }.map(function(x){ return x + this.foo }, obj).foo.should.eql 42
+      { foo: 1 }.map(function(x){ return x + this.foo }, obj).should.eql [42]
     end
 
     it 'should pass value, key, then the object itself'
@@ -19,7 +19,7 @@ describe 'Enumerable'
     end
 
     it 'should support short-hand function syntax'
-      { foo: 1 }.map('a + 1').foo.should.eql 2
+      { foo: 1 }.map('a + 1').should.eql [2]
     end
   end
 

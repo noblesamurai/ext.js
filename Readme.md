@@ -142,7 +142,8 @@ To use simply:
 
 ### Function
 
-  * Function#bind(context)
+  * Function#bind(context[, ...])
+  * Function#curry(...)
 
 ### Base64
 
