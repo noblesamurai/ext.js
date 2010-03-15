@@ -1,4 +1,11 @@
 
+0.2.3 / 2010-03-15
+==================
+
+  * Added Function#curry(), fixed Enumerable#map() which always returns an array now
+  * Removed some process.mixin() calls
+  * Fixed Object#{keys,values}; can be properly overwritten
+
 0.2.2 / 2010-03-11
 ==================
 
