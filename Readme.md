@@ -80,6 +80,7 @@ To use simply:
   * Number#week       / Number#weeks
   * Number#month      / Number#months
   * Number#year       / Number#years
+  * Number#toSeconds
   * Number#toMinutes
   * Number#toHours
   * Number#toDays
