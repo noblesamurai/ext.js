@@ -1,4 +1,9 @@
 
+0.2.4 / 2010-03-15
+==================
+
+  * APIs including Number#{seconds,minutes,hours, ...} working in milliseconds not seconds. Closes #63
+
 0.2.3 / 2010-03-15
 ==================
 
