@@ -1,5 +1,4 @@
 
-process.mixin(require('sys'))
 require.paths.unshift('spec', 'spec/lib', 'lib')
 require('jspec')
 require('ext')
