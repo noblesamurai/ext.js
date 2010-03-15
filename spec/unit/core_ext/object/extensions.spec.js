@@ -47,7 +47,7 @@ describe 'Object'
       { foo: 'bar', baz: 'raz' }.keys.should.eql ['foo', 'baz']
     end
     
-    it 'should be allow being written to'
+    it 'should allow being written to'
       { keys: 'test' }.keys.should.eql 'test'
     end
   end
@@ -55,6 +55,10 @@ describe 'Object'
   describe '#values'
     it 'should return an array containing all the values of an object'
       { foo: 'bar', baz: 'raz' }.values.should.eql ['bar', 'raz']
+    end
+    
+    it 'should allow being written to'
+      { values: 'wahoo' }.values.should.eql 'wahoo'
     end
   end
 
