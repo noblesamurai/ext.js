@@ -1,5 +1,14 @@
 
 describe 'Number'
+  describe '#minutes (and friends)'
+    it 'should return milliseconds'
+      (1).second.should.eql 1000
+      (1).minute.should.eql (60).seconds
+      (1).hour.should.eql (60).minutes
+      (1).day.should.eql (24).hours
+    end
+  end
+
   describe '#currency'
     describe 'given an integer'
       it 'should return a currency formatted string'
@@ -35,8 +44,8 @@ describe 'Number'
 
   describe '#ago'
     it 'should return a previous Date in time'
-      var seconds = (Number(new Date) - Number((3).minutes.ago)) / 1000
-      seconds.should.eql 180
+      var ms = (Number(new Date) - Number((3).seconds.ago))
+      ms.should.eql 3000
     end
   end
 
