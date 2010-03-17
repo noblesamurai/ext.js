@@ -1,4 +1,11 @@
 
+0.2.5 / 2010-03-16
+==================
+
+  * Removed Object#include()
+  * Removed last process.mixin() call
+  * Deprecated String#lambda() etc. Closes #64
+
 0.2.4 / 2010-03-15
 ==================
 
