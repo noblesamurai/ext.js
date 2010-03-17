@@ -97,7 +97,7 @@ To use simply:
   * String#uppercase
   * String#lowercase
   * String#camelcase
-  * String#digitize
+  * String#digits
   * String#strip
   * String#drop(n)
   * String#take(n)
