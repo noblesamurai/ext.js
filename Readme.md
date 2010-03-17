@@ -38,7 +38,7 @@ To use simply:
   * Array#excludes(item[, item, ...])
   * Array#includes(item[, item, ...])
   * Array#clear
-  * Array#flatten
+  * Array#flattened
   * Array#first
   * Array#last
   * Array#sample
