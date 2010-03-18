@@ -87,6 +87,10 @@ To use simply:
   * Number#toWeeks
   * Number#toMonths
   * Number#toYears
+  * Number#byte       / Number#bytes
+  * Number#kilobyte   / Number#kilobytes
+  * Number#megabyte   / Number#megabytes
+  * Number#gigabyte   / Number#gigabytes
   * Number#ago
   * Number#times(fn[, context])
   * Number#isFloat

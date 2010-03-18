@@ -8,6 +8,15 @@ describe 'Number'
       (1).day.should.eql (24).hours
     end
   end
+  
+  describe '#kilobytes (and friends)'
+    it 'should perform byte conversion'
+      (5).bytes.should.eql 5
+      (5).kilobytes.should.eql 5120
+      (1).megabyte.should.eql 1048576
+      (1).gigabyte.should.eql 1073741824
+    end
+  end
 
   describe '#currency'
     describe 'given an integer'
