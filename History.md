@@ -1,4 +1,12 @@
 
+0.2.6 / 2010-03-18
+==================
+
+  * Added Number#{gigabyte,megabyte,kilobyte,byte}[s]
+  * Changed; String#lambda etc no longer depricated. Benchmarks proved to be invalid
+  * Depricated String#digitize in favour of String#digits
+  * Depricated Array#flatten in favour of Array#flattened
+
 0.2.5 / 2010-03-16
 ==================
 
