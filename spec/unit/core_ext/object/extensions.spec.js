@@ -90,6 +90,10 @@ describe 'Object'
       a.merge(b).should.equal a
       a.foo.should.eql 'bar'
     end
+    
+    it 'should work when an undefined object is passed'
+      { foo: 'bar' }.merge().should.eql { foo: 'bar' }
+    end
   end
   
   describe '#mergeDeep()'
