@@ -113,6 +113,10 @@ describe 'Object'
       a.mergeDeep(b).should.equal a
       a.should.eql { user: { name: { first: 'simon' }}}
     end
+    
+    it 'should work when an undefined object is passed'
+      { foo: 'bar' }.mergeDeep().should.eql { foo: 'bar' }
+    end
   end
 
   describe '#respondsTo()'
