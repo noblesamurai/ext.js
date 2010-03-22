@@ -78,17 +78,40 @@ describe 'Object'
 
   describe '#merge()'
     it 'should merge the given object and return _this_'
-      var source = { foo: 'bar' }
-      var target = {}
-      target.merge(source).should.eql target
-      target.foo.should.eql 'bar'
+      var a = {}
+      var b = { foo: 'bar' }
+      a.merge(b).should.equal a
+      a.foo.should.eql 'bar'
     end
 
     it 'should give the object being merged precendence'
-      var source = { foo: 'bar' }
-      var target = { foo: 'baz' }
-      target.merge(source)
-      target.foo.should.eql 'bar'
+      var a = { foo: 'foo' }
+      var b = { foo: 'bar' }
+      a.merge(b).should.equal a
+      a.foo.should.eql 'bar'
+    end
+  end
+  
+  describe '#mergeDeep()'
+    it 'should perform a deep merge and return _this_'
+      var a = { user: { name: { first: 'tj' }}}
+      var b = { user: { name: { last: 'holowaychuk' }}}
+      a.mergeDeep(b).should.equal a
+      a.should.eql { user: { name: { first: 'tj', last: 'holowaychuk' }}}
+    end
+    
+    it 'should give the object being merged precendence'
+      var a = { user: { name: { first: 'tj' }}}
+      var b = { user: { name: { first: 'simon' }}}
+      a.mergeDeep(b).should.equal a
+      a.should.eql { user: { name: { first: 'simon' }}}
+    end
+    
+    it 'should work when keys are not available on the source object'
+      var a = {}
+      var b = { user: { name: { first: 'simon' }}}
+      a.mergeDeep(b).should.equal a
+      a.should.eql { user: { name: { first: 'simon' }}}
     end
   end
 

@@ -28,7 +28,8 @@ To use simply:
   * Object#join([str])
   * Object#alias(orig, alias)
   * Object#tap(fn[, context])
-  * Object#merge(obj[, reverse])
+  * Object#merge(obj)
+  * Object#mergeDeep(obj)
   * Object#each(fn[, context])
   * Object#respondsTo(key)
 
