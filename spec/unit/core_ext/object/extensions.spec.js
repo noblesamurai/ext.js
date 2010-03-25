@@ -52,6 +52,7 @@ describe 'Object'
       o.keys.should.eql 'foo'
       o.keys = 'bar'
       o.keys.should.eql 'bar'
+      o.propertyIsEnumerable('keys').should.be_true
     end
   end
 
@@ -65,6 +66,7 @@ describe 'Object'
       o.values.should.eql 'foo'
       o.values = 'bar'
       o.values.should.eql 'bar'
+      o.propertyIsEnumerable('values').should.be_true
     end
   end
 
