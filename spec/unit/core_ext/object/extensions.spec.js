@@ -48,7 +48,10 @@ describe 'Object'
     end
     
     it 'should allow being written to'
-      { keys: 'test' }.keys.should.eql 'test'
+      var o = { keys: 'foo' }
+      o.keys.should.eql 'foo'
+      o.keys = 'bar'
+      o.keys.should.eql 'bar'
     end
   end
 
