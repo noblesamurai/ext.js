@@ -61,7 +61,10 @@ describe 'Object'
     end
     
     it 'should allow being written to'
-      { values: 'wahoo' }.values.should.eql 'wahoo'
+      var o = { values: 'foo' }
+      o.values.should.eql 'foo'
+      o.values = 'bar'
+      o.values.should.eql 'bar'
     end
   end
 
