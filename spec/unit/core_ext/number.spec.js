@@ -53,7 +53,7 @@ describe 'Number'
 
   describe '#ago'
     it 'should return a previous Date in time'
-      var ms = (Number(new Date) - Number((3).seconds.ago))
+      var ms = (Date.now() - Number((3).seconds.ago))
       ms.should.eql 3000
     end
   end
