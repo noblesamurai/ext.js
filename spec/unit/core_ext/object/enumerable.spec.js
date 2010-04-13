@@ -6,6 +6,14 @@ describe 'Object'
       obj.each(function (x) { result += x })
       result.should.eql 3
     end
+    
+    it 'should iterate own properties only'
+      var err = new Error('wahoo')
+      err.foo = 'bar'
+      var keys = []
+      err.each(function(val, key){ keys.push(key) })
+      keys.should.eql ['message', 'stack', 'foo']
+    end
 
     it 'should support a given context'
       var obj = { foo: 1, bar: 1, baz: 1}, result = 0, context = { foo: 1 }

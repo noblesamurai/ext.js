@@ -4,7 +4,7 @@ describe 'Enumerable'
     it 'should map an object'
       { foo: 1, bar: 2 }.map(function(x){ return x + 1 }).should.eql [2, 3]
     end
-
+    
     it 'should support a given context'
       var obj = { foo: 41 }
       { foo: 1 }.map(function(x){ return x + this.foo }, obj).should.eql [42]
