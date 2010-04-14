@@ -1,4 +1,13 @@
 
+0.3.0 / 2010-04-14
+==================
+
+  * Added Object#mergeDeep()
+  * Fixed issue with Object#{keys,values} having no setters once assigned a value
+  * Changed; String#strip now using native String#trim()
+  * Changed; Object#merge() accepts undefined, defaulting to {}
+  * Changed; Object#mergeDeep() accepts undefined, defaulting to {}
+
 0.2.6 / 2010-03-18
 ==================
 
