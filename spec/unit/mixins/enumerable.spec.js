@@ -21,12 +21,12 @@ describe 'Enumerable'
 
   describe '#filter()'
     it 'should filter the object'
-      { foo: 'bar', foo2: 'baz' }.filter(function (x) { return x === 'bar' }).should.eql { foo: 'bar' }
+      { foo: 'bar', foo2: 'baz' }.filter(function (x) { return x.charAt(0) === 'b' }).should.eql ['bar', 'baz']
     end
 
     it 'should support a given context'
       var obj = { foo: 'bar' }
-       {foo: 'bar', foo2: 'baz' }.filter(function (x) { return x === this.foo }, obj).should.eql { foo: 'bar' }
+       {foo: 'bar', foo2: 'baz' }.filter(function (x) { return x === this.foo }, obj).should.eql ['bar']
     end
 
     it 'should pass value, key, then the object itself'
@@ -121,12 +121,12 @@ describe 'Enumerable'
 
   describe '#reject()'
     it 'should return an object containing only the properties the testing function returned false for'
-      {foo: 'bar', baz: 'baz'}.reject(function (x) { return x === 'bar' }).should.eql {baz: 'baz'}
+      {foo: 'bar', baz: 'baz'}.reject(function (x) { return x === 'bar' }).should.eql ['baz']
     end
 
     it 'should support a given context'
       var obj = { foo: 'bar' }
-      {foo: 'bar', bar: 'baz'}.reject(function (x) { return x === this.foo }, obj).should.eql {bar: 'baz'}
+      {foo: 'bar', bar: 'baz'}.reject(function (x) { return x === this.foo }, obj).should.eql ['baz']
     end
 
     it 'should pass value, key, then the object itself'
