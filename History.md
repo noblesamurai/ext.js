@@ -1,4 +1,9 @@
 
+0.4.1 / 2010-04-20
+==================
+
+  * Object#reject() and Object#filter() now return arrays at all times
+
 0.4.0 / 2010-04-20
 ==================
 
