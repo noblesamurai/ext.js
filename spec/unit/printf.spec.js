@@ -1,4 +1,6 @@
 
+sprintf = require('ext').sprintf
+
 describe 'sprintf()'
   describe '%'
     it 'should be literal'
