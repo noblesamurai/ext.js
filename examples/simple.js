@@ -1,8 +1,7 @@
 
 require.paths.unshift('lib')
 require('ext')
-process.mixin(require('sys'))
-var number = require('ext/number')
+global.merge(require('sys'))
 
 p((5).hours)
 // => 180000
@@ -41,7 +40,4 @@ p((new Date('May 25, 1987')).format('%Y-%m-%d'))
 p((new Date('May 25, 1987')).format('took place on %A the %nd'))
 // => 'took place on Monday the 25th'
 
-SiteGenerator = function(){}
-p('site_generator'.camelcase.variable)
-// => [Function]
 
