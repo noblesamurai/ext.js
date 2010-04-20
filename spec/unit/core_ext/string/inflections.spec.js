@@ -90,9 +90,9 @@ describe 'String inflections'
     end
   end
 
-  describe '#digitize'
+  describe '#digits'
     it 'should strip non numeric characters'
-      '$100,000'.digitize.should.eql '100000'
+      '$100,000'.digits.should.eql '100000'
     end
   end
 
