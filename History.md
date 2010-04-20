@@ -1,4 +1,12 @@
 
+0.4.0 / 2010-04-20
+==================
+
+  * Changed; renamed String#base64Encode -> String#base64Encoded
+  * Removed String lambdas
+  * Removed String#digitize
+  * Removed Array#flatten
+
 0.3.0 / 2010-04-14
 ==================
 
