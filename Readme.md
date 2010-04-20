@@ -6,8 +6,8 @@ formatting dates, currency helpers, and more. This library targets node.js and
 server-side frameworks such as [Express](http://github.com/visionmedia/express).
 
 Ext.js uses the CommonJS module pattern when needed.
-Additionally, **all** of the native object extensions are non-enumerable,
-and you may create your own via Ext.extend(prototype, methods).
+Additionally, **all** of the native object extensions are _non-enumerable_,
+and you may create your own via `require('ext').extend(prototype, methods).
 
 ## Installation
 
