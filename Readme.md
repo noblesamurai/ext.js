@@ -153,8 +153,8 @@ To use simply:
 
 ### Base64
 
-  * String#base64Encode / encode(str)
-  * String#base64Decode / decode(str)
+  * String#base64Encoded / encode(str)
+  * String#base64Decoded / decode(str)
 
 ### Error
 
