@@ -17,10 +17,6 @@ describe 'Enumerable'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-
-    it 'should support short-hand function syntax'
-      { foo: 1 }.map('a + 1').should.eql [2]
-    end
   end
 
   describe '#filter()'
@@ -43,10 +39,6 @@ describe 'Enumerable'
 
     it 'should be aliased as #select()'
       {}.select.should.equal {}.filter
-    end
-
-    it 'should support short-hand function syntax'
-      { foo: 'bar' }.filter('.length > 3').should.eql {}
     end
   end
 
@@ -75,10 +67,6 @@ describe 'Enumerable'
     it 'should be aliased as #all()'
       {}.every.should.equal {}.all
     end
-
-    it 'should support short-hand function syntax'
-      { foo: 'bar' }.every('=== "bar"').should.be_true
-    end
   end
 
   describe '#some()'
@@ -106,10 +94,6 @@ describe 'Enumerable'
     it 'should be aliased as #any()'
       {}.some.should.equal {}.any
     end
-
-    it 'should support short-hand function syntax'
-      { foo: 'bar' }.some('=== "bar"').should.be_true
-    end
   end
 
   describe '#none()'
@@ -133,10 +117,6 @@ describe 'Enumerable'
       args[1].should.eql 'foo'
       args[2].should.eql obj
     end
-
-    it 'should work with shorthand function syntax'
-      { a: 1, b:2, c: 10 }.none('a > 5').should.be_false
-    end
   end
 
   describe '#reject()'
@@ -155,10 +135,6 @@ describe 'Enumerable'
       args[0].should.eql 'bar'
       args[1].should.eql 'foo'
       args[2].should.eql obj
-    end
-
-    it 'should support short-hand function syntax'
-      { foo: 'bar' }.reject('=== "bar"').should.eql {}
     end
   end
 
@@ -185,10 +161,6 @@ describe 'Enumerable'
       args[2].should.eql obj
     end
 
-    it 'should allow shorthand function syntax'
-      {a: 1, b: 2, c: 3}.detect('=== 3').should.eql 3
-    end
-
     it 'should be aliased as #find()'
       {}.detect.should.equal {}.find
     end
@@ -201,10 +173,6 @@ describe 'Enumerable'
         return evens
       }, [])
       evens.should.eql [2,4,6,8,10]
-    end
-
-    it 'should work with shorthand function syntax'
-      {a: 1, b: 2, c: 3, d: 4, e: 5}.reduce('a + b', 0).should.eql 15
     end
 
     it 'should pass the first value when no memo is supplied'
