@@ -96,6 +96,7 @@ To use simply:
   * Number#times(fn[, context])
   * Number#isFloat
   * Number#hex
+  * Number#octal
 
 ### String
 

@@ -77,6 +77,12 @@ describe 'Number'
       (13434624).hex.should.eql 'ccff00'
     end
   end
+  
+  describe '#octal'
+    it 'should return the octal string equiv of a number'
+      (493).octal.should.eql '755'
+    end
+  end
 
   describe '#isFloat'
     it 'should indicate whether the number is a float'
