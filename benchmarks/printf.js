@@ -1,5 +1,6 @@
 
-var n = 4000
+var n = 4000,
+    sprintf = require('ext').sprintf
 exports.n = n
 
 exports['null'] = function(){

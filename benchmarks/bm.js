@@ -4,7 +4,8 @@ require('ext')
 
 var path = process.argv[2],
     benchmarks = require(__dirname + '/' + path),
-    times = benchmarks.n || 1
+    times = benchmarks.n || 1,
+    printf = require('ext').printf
 
 delete benchmarks.n
 
