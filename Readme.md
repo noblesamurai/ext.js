@@ -95,6 +95,7 @@ To use simply:
   * Number#ago
   * Number#times(fn[, context])
   * Number#isFloat
+  * Number#hex
 
 ### String
 

@@ -71,6 +71,12 @@ describe 'Number'
       context.should.eql { foo: 'bar' }
     end
   end
+  
+  describe '#hex'
+    it 'should return the hexidecimal string equiv of a number'
+      (13434624).hex.should.eql 'ccff00'
+    end
+  end
 
   describe '#isFloat'
     it 'should indicate whether the number is a float'
