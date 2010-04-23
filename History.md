@@ -1,4 +1,12 @@
 
+0.5.0 / 2010-04-23
+==================
+
+  * Added Number#octal
+  * Added Number#hex
+  * Increase performance Object#each() by %50
+  * Increase performance of Object#merge()
+
 0.4.1 / 2010-04-20
 ==================
 
