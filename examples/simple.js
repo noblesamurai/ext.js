@@ -1,7 +1,8 @@
 
 require.paths.unshift('lib')
 require('ext')
-global.merge(require('sys'))
+Object.merge(global, require('sys'))
+Object.merge(global, require('ext'))
 
 p((5).hours)
 // => 180000
