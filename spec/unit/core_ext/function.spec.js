@@ -17,7 +17,7 @@ describe 'Function'
   describe '#curry()'
     it 'should accept arguments to "curry"'
       function joinString(delim) {
-        return arguments.values.drop(1).join(delim || ' ')
+        return Object.values(arguments).drop(1).join(delim || ' ')
       }
       joinString(',', 'foo', 'bar').should.eql 'foo,bar'
       var joinComma = joinString.curry(',')
