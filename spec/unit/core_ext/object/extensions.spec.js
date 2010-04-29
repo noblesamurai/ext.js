@@ -56,7 +56,7 @@ describe 'Object'
     end
     
     it 'should work when an undefined object is passed'
-      { foo: 'bar' }.mergeDeep().should.eql { foo: 'bar' }
+      Object.mergeDeep({ foo: 'bar' }).should.eql { foo: 'bar' }
     end
   end
 end
