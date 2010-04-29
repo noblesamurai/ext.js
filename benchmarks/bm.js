@@ -11,9 +11,9 @@ delete benchmarks.n
 
 printf('\n      benchmarking %s %d time(s)\n\n', path, times)
 
-benchmarks.each(function(fn, label){
+for (var label in benchmarks) {
   var start = +new Date
-  fn()
+  benchmarks[label]()
   var duration = (+new Date - start) / 1000
   printf('%45s : %0.3f\n', label, duration)
-})
+}

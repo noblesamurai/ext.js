@@ -7,39 +7,28 @@ exports['null'] = function(){
     ;
 }
 
-var o = {}
+var a = { foo: 'bar' },
+    b = {},
+    i = 400
 
-exports['Object#keys'] = function(){
+while (i--)
+  b[i] = i
+
+exports['Object.merge()'] = function(){
   for (var i = 0; i < n; ++i) {
-    o.foo = 'bar'
-    o.foo
-    o.bar = 'baz'
-    o.bar
-    o.keys
-  }
-}
-
-var o = {}
-
-exports['Object.keys()'] = function(){
-  for (var i = 0; i < n; ++i) {
-    o.foo = 'bar'
-    o.foo
-    o.bar = 'baz'
-    o.bar
-    Object.keys(o)
+    Object.merge(a, b)
   }
 }
 
 var a = { foo: 'bar' },
     b = {},
-    i = 40
+    i = 400
 
 while (i--)
   b[i] = i
 
-exports['Object#merge()'] = function(){
+exports['Object.mergeDeep()'] = function(){
   for (var i = 0; i < n; ++i) {
-    a.merge(b)
+    Object.mergeDeep(a, b)
   }
 }
