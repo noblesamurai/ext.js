@@ -1,4 +1,13 @@
 
+0.6.0 / 2010-04-29
+==================
+
+  * Added Object.merge(a, b)
+  * Added Object.mergeDeep(a, b)
+  * Added Object.values(obj)
+  * Removed all Object.prototype methods
+  * Removed Enumerable mixin (moved some of the methods to Array.prototype)
+
 0.5.0 / 2010-04-23
 ==================
 
