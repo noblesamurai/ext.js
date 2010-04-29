@@ -23,15 +23,9 @@ To use simply:
 
 ### Object
 
-  * Object#keys
-  * Object#values
-  * Object#join([str])
-  * Object#alias(orig, alias)
-  * Object#tap(fn[, context])
-  * Object#merge(obj)
-  * Object#mergeDeep(obj)
-  * Object#each(fn[, context])
-  * Object#respondsTo(key)
+  * Object.values(obj)
+  * Object.merge(a, b)
+  * Object.mergeDeep(a, b)
 
 ### Array
 
@@ -51,6 +45,13 @@ To use simply:
   * Array#remove(obj[, fn[, context]])
   * Array#transposed
   * Array#isEmpty
+  * Array#reject(fn[, context])
+  * Array#none(fn[, context])
+  * Array#find(fn[, context])
+  * Array#each() alias of #forEach()
+  * Array#select() alias of #filter()
+  * Array#find() alias of #every()
+  * Array#any() alias of #some()
 
 #### Collection Operators
 
@@ -58,17 +59,6 @@ To use simply:
   * Array#avg
   * Array#min
   * Array#max
-
-### Enumerable (included by Object and Array)
-
-  * Enumerable#map(fn[, context])
-  * Enumerable#reduce(fn[, memo]) aliased as inject()
-  * Enumerable#filter(fn[, context]) aliased as select()
-  * Enumerable#detect(fn[, context]) aliased as find()
-  * Enumerable#some(fn[, context]) aliased as any()
-  * Enumerable#every(fn[, context]) aliased as all()
-  * Enumerable#none(fn[, context])
-  * Enumerable#reject(fn[, context])
 
 ### Number
 
@@ -171,54 +161,6 @@ To use simply:
   * sprintf(str[, arg[, ...]])
   * eprintf(str[, arg[, ...]])
   * printf(str[, arg[, ...]])
-
-## Iterator Functions
-
-Ext.js allows most iterators to use _"string lambda expressions"_,
-which allows you to define a function by passing a string containing,
-a valid Lambda expression or shortform as shown in some of the examples
-below.
-
-### Full Lambda Expressions
-
-    [1,2,3].map('a -> a + 1')
-    // => [2,3,4]
-
-### Full Lambda Expressions With Currying
-
-    curried = [1,2,3].map('a -> b -> a + b')
-    // => [(Function), (Function), (Function)]
-
-    curried[1](40)
-    // => 42
-
-### Literals
-
-    [1,2,3,4,5].select(function(n){ return n > 3 })
-    // => [4,5]
-
-### Properties
-
-    ['hello', 'there'].map('.length')
-    // => [5,5]
-
-    [['hello'], ['there']].map('[0]')
-    // => ['hello', 'there']
-
-### Methods
-
-    [1,2,3].map('.toString()')
-    // => ['1','2','3']
-
-### Binary Operators
-
-    [1,2,3,4,5].select('> 3')
-    // => [4,5]
-
-### Object Usage
-
-    { foo: 'bar', baz: 'something' }.select(".length > 3")
-    // => { baz: 'something' }
 
 ## Date Parsing
 

@@ -18,11 +18,9 @@ else
     .exec('spec/unit/core_ext/array/collections.spec.js')
     .exec('spec/unit/core_ext/date/parser.spec.js')
     .exec('spec/unit/core_ext/date/extensions.spec.js')
-    .exec('spec/unit/core_ext/object/enumerable.spec.js')
     .exec('spec/unit/core_ext/object/extensions.spec.js')
     .exec('spec/unit/core_ext/string/extensions.spec.js')
     .exec('spec/unit/core_ext/string/inflections.spec.js')
-    .exec('spec/unit/mixins/enumerable.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
 
