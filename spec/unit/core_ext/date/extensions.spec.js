@@ -38,6 +38,14 @@ describe 'Date'
         end
       end
     end
+    
+    describe '%l'
+      it 'should represent hours with a 12-hour clock, and no leading zero'
+        (new Date('May 5 1987 11:00:05 am')).format('%l').should.eql '11'
+        (new Date('May 5 1987 3:00:05 pm')).format('%l').should.eql '3'
+        (new Date('May 5 1987 3:00:05 am')).format('%l').should.eql '3'
+      end
+    end
 
     describe '%a'
       it 'should represent a short day name'
