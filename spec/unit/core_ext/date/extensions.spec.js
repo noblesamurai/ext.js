@@ -138,6 +138,13 @@ describe 'Date'
         (new Date('December 5 1987 1:34:12 pm')).format('%B %ne').should.eql 'December 5th'
       end
     end
+
+    describe 'given squashed specifiers'
+      it 'should properly substitute'
+        (new Date('December 5 1987 1:34:12 pm')).format('%Y-%m-%dT%H:%M:%S').should.eql '1987-12-05T13:34:12'
+      end
+    end
+
   end
 
   describe '#inWordsSince()'
