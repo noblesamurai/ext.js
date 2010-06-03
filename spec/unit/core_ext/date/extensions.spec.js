@@ -138,6 +138,32 @@ describe 'Date'
         (new Date('December 5 1987 1:34:12 pm')).format('%B %ne').should.eql 'December 5th'
       end
     end
+
+    describe 'given squashed specifiers'
+      it 'should properly substitute'
+        (new Date('December 5 1987 1:34:12 pm')).format('%Y-%m-%dT%H:%M:%S').should.eql '1987-12-05T13:34:12'
+      end
+    end
+
+    describe 'given an date with timezone'
+      it 'should format an UTC date as UTC unaltered'
+        (new Date('December 5 1987 1:34:12 pm UTC')).formatUTC('%Y-%m-%dT%H:%M:%S').should.eql '1987-12-05T13:34:12'
+      end
+
+      it 'should format an UTC+1 date shifted one hour'
+        (new Date('December 5 1987 1:34:12 pm UTC+0100')).formatUTC('%Y-%m-%dT%H:%M:%S').should.eql '1987-12-05T12:34:12'
+      end
+
+      it 'should properly shift from one day to the next'
+        (new Date('December 5 1987 1:34:12 pm UTC-1100')).formatUTC('%Y-%m-%dT%H:%M:%S').should.eql '1987-12-06T00:34:12'
+      end
+
+      it 'should properly support daylight saving time'
+        (new Date('December 5 2000 1:34:12 pm PST')).formatUTC('%Y-%m-%dT%H:%M:%S').should.eql '2000-12-05T21:34:12'
+        (new Date('June 5 2000 1:34:12 pm PDT')).formatUTC('%Y-%m-%dT%H:%M:%S').should.eql '2000-06-05T20:34:12'
+      end
+    end
+
   end
 
   describe '#inWordsSince()'
