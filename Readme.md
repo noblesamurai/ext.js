@@ -11,15 +11,12 @@ and you may create your own via `require('ext').extend(prototype, methods).
 
 ## Installation
 
-  Install the [Kiwi package manager for nodejs](http://github.com/visionmedia/kiwi)
-  and run:
-  
-      $ kiwi install ext
+    $ npm install ext
 
 ## Extensions
 
 To use simply:
-    require('ext')
+    require('ext');
 
 ### Object
 
